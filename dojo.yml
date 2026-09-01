@@ -1,29 +1,21 @@
-id: example-import
-
-name: Example Import Dojo
-
-type: example
+id: leeds-compsoc-ctf
+name: Leeds CompSoc CTF
+type: hidden
+password: compsoc-test
 
 modules:
+  - import:
+      dojo: gca-ctf~8018193d
+      module: osint
 
   - import:
-      dojo: example
-      module: hello
+      dojo: gca-ctf~8018193d
+      module: web
 
-  - id: planet
-    name: Planet
-    description: A couple planets.
+  - import:
+      dojo: gca-ctf~8018193d
+      module: forensics
 
-    challenges:
-
-      - import:
-          dojo: example
-          module: world
-          challenge: earth
-
-      - import:
-          dojo: example
-          module: world
-          challenge: mars
-        name: Martian Planet
-        description: This is a martian planet... mars.
+  - import:
+      dojo: gca-ctf~8018193d
+      module: pwn-re-1
