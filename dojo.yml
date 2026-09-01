@@ -1,6 +1,6 @@
 id: leeds-compsoc-ctf
 name: Leeds CompSoc CTF
-type: hidden
+type: topic
 password: compsoc-test
 
 modules:
