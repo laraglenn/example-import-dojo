@@ -407,12 +407,11 @@ modules:
   - id: easy
     name: "🔵 Easy"
     description: |
-      These challenges introduce slightly more involved Linux and
-      cybersecurity tasks. You may need to combine commands, investigate
-      files, or work out which information is relevant.
+      These challenges build on the skills introduced in Beginner and require
+      you to investigate information more carefully or combine multiple steps.
   
-      The instructions give you the tools and direction needed to get started,
-      but you may need to investigate further to find the flag.
+      The instructions provide enough information to get started, but you may
+      need to work out the exact commands or approach yourself.
   
       If you get stuck, ask a volunteer or use SENSAI for a hint.
   
