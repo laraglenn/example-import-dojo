@@ -29,7 +29,7 @@ description: |
   - If you need to move text between the virtual computer and your
     normal browser, use the Clipboard panel in the side tab of the
     pwn.college Desktop.
-  - If you get stuck, ask your team or a volunteer for help.
+  - If you get stuck, ask your team or a volunteer.
   - You can also use SENSAI, the AI helper built into pwn.college.
     Start your challenge first, then use the Help link at the top
     of the page to access SENSAI.
@@ -127,7 +127,6 @@ modules:
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: forensics
@@ -155,8 +154,6 @@ modules:
           2. Go to the challenge folder:
 
              cd /challenge
-
-             `cd` means change directory. It moves you into a different folder.
 
           3. Type:
 
@@ -191,11 +188,11 @@ modules:
 
              Look for the file that was extracted from the vault.
 
-          9. Use cat to read the contents of the file.
-
-             For example:
+          9. Type:
 
              cat filename.txt
+
+             to read the contents of the file.
 
           10. Find the complete temporary FLAG{...}.
 
@@ -205,12 +202,6 @@ modules:
 
               When the verifier asks for the flag, enter the complete
               temporary flag, including FLAG{}.
-
-              For example, if the flag you found was:
-
-              FLAG{something_here}
-
-              you would enter the whole flag, including FLAG{ and }.
 
           12. If it is correct, the verifier will give you your final
               pwn.college{...} flag.
@@ -224,7 +215,6 @@ modules:
           about what information it might contain.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
-
 
       - import:
           dojo: cyber-security~59368da7
@@ -254,21 +244,15 @@ modules:
 
              cd /home/ubuntu/Artists-Clue
 
-             `cd` means change directory. It moves you into a different folder.
-
           3. Type:
 
              ls
 
              You should see art.jpg.
 
-          4. Use exiftool to inspect the image.
+          4. Use exiftool to inspect an image's metadata.
 
-             The basic format is:
-
-             exiftool filename
-
-             Use it to inspect art.jpg.
+             exiftool art.jpg
 
           5. Look carefully through the information it displays.
 
@@ -302,7 +286,6 @@ modules:
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: web
@@ -327,8 +310,6 @@ modules:
           2. Go to the challenge folder:
 
              cd /challenge
-
-             `cd` means change directory. It moves you into a different folder.
 
           3. Start the challenge:
 
@@ -393,7 +374,7 @@ modules:
           competition challenge page.
 
           If you need to move text between the virtual Desktop and your
-          normal computer, use the Clipboard panel in the side tab of the
+          normal browser, use the Clipboard panel in the side tab of the
           pwn.college Desktop.
 
           Stuck?
@@ -405,15 +386,15 @@ modules:
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
   - id: easy
-      name: "🔵 Easy"
-      description: |
-        These challenges build on the skills introduced in Beginner and require
-        you to investigate information more carefully or combine multiple steps.
-  
-        The instructions provide enough information to get started, but you may
-        need to work out the exact commands or approach yourself.
-  
-        If you get stuck, ask a volunteer or use SENSAI for a hint.
+    name: "🔵 Easy"
+    description: |
+      These challenges build on the skills introduced in Beginner and require
+      you to investigate information more carefully or combine multiple steps.
+
+      The instructions provide enough information to get started, but you may
+      need to work out the exact commands or approach yourself.
+
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
 
     challenges:
 
@@ -454,7 +435,6 @@ modules:
           7. Submit the final flag on the challenge page.
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
-
 
       - import:
           dojo: cyber-security~59368da7
@@ -500,7 +480,6 @@ modules:
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: forensics
@@ -545,7 +524,6 @@ modules:
           9. Submit the final flag on the challenge page.
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
-
 
       - import:
           dojo: cyber-security~59368da7
@@ -628,7 +606,6 @@ modules:
 
           Submit the pwn.college{...} flag shown by the website.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: pwn
@@ -662,7 +639,6 @@ modules:
 
           to receive your pwn.college{...} flag.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: forensics
@@ -695,7 +671,6 @@ modules:
           Enter the complete temporary flag to receive your final
           pwn.college{...} flag.
 
-
       - import:
           dojo: cyber-security~59368da7
           module: web
@@ -723,7 +698,6 @@ modules:
 
           If you can make the website treat you as an administrator, it will
           show you the pwn.college{...} flag.
-
 
   - id: hard
     name: "🔴 Hard"
