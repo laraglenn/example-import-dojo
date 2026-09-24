@@ -404,7 +404,20 @@ modules:
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
-  - id: chatty-server
+  - id: easy
+  name: "🔵 Easy"
+  description: |
+    These challenges introduce slightly more involved Linux and
+    cybersecurity tasks. You may need to combine commands, investigate
+    files, or work out which information is relevant.
+
+    The instructions give you the tools and direction needed to get started,
+    but you may need to investigate further to find the flag.
+
+    If you get stuck, ask a volunteer or use SENSAI for a hint.
+
+
+- id: chatty-server
   name: "Chatty Server"
   description: |
     You are investigating a server log called `server.log`.
