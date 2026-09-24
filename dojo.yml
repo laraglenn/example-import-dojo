@@ -404,252 +404,168 @@ modules:
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
-  - id: easy
-    name: "🔵 Easy"
-    description: |
-      These challenges are still approachable for beginners, but require
-      you to work out a little more for yourself.
+  - id: chatty-server
+  name: "Chatty Server"
+  description: |
+    You are investigating a server log called `server.log`.
 
-      You may need to combine commands, investigate information more carefully,
-      or use a tool's help options to work out the exact syntax.
+    The log contains activity from lots of different users. Somewhere in
+    the log, a temporary flag has been hidden.
 
-      If you get stuck, try to identify what you know and what you still need
-      to work out before asking for help. You can ask a volunteer for a hint
-      or use SENSAI through the Help option on pwn.college.
+    There are also fake flags and unrelated activity in the log, so you
+    will need to work out which information is relevant.
 
-    challenges:
+    1. Go to the challenge folder:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: chatty-server
-        name: "Chatty Server"
-        description: |
-          You are investigating a server log called server.log.
+       cd /home/ubuntu/Chatty-Server
 
-          The log contains lots of activity from different users. Somewhere
-          in the log, a user has left behind three pieces of a temporary flag.
+    2. Use `grep` to search through `server.log`.
 
-          There are also fake flags, so you will need to work out which
-          information is relevant.
+    3. Find the complete temporary flag.
 
-          To start:
+       It will look like:
 
-             cd /home/ubuntu/Chatty-Server
+       FLAG{...}
 
-          Use grep to search server.log and narrow down the information you
-          need.
+    4. Once you have found the temporary flag, run:
 
-          Find the three pieces of the flag and work out how they fit together
-          to form the complete FLAG{...}.
+       /challenge/verify
 
-          When you find the complete temporary flag, run:
+    5. Enter the complete temporary flag, including `FLAG{...}`.
 
-             /challenge/verify
+    6. The verifier will give you your final `pwn.college{...}` flag.
 
-          Enter the complete temporary flag, including FLAG{}, to receive
-          your final pwn.college{...} flag.
+    7. Submit the final flag on the challenge page.
 
-          Stuck?
+    If you get stuck, ask a volunteer or use SENSAI for a hint.
 
-          Not every line containing FLAG is part of the real flag. Think about
-          what the three real pieces have in common.
 
-          If you are still stuck, ask a volunteer for a hint or use SENSAI.
+- id: social-media-password
+  name: "Social Media Password"
+  description: |
+    You are investigating a fake social media profile belonging to
+    `@random_dude12`.
 
+    The profile contains three posts with information about the person.
+    Use clues from the posts to work out a possible password.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: osint
-          challenge: socialmediapassword
-        name: "Social Media Password"
-        description: |
-          You have been given a fictional social media profile belonging to
-          @random_dude12.
+    1. Start the challenge by running:
 
-          The profile contains three posts with information about the person.
+       /challenge/run
 
-          Your job is to use information from all three posts to work out
-          a possible password.
+       This starts the website. Leave this Terminal running while you
+       complete the challenge.
 
-          To start:
+    2. Open the Desktop and launch Firefox.
 
-             /challenge/run
+    3. Go to:
 
-          Leave the Terminal running while you use the website.
+       http://127.0.0.1:5000
 
-          Open Firefox inside the pwn.college Desktop and visit:
+    4. Read the three posts and look for information that could be used
+       to create a password.
 
-             http://127.0.0.1:5000
+    5. When you think you have the password, open a second Terminal in
+       the Desktop.
 
-          Read the three posts carefully and look for information that could
-          be used to construct a password.
+    6. In the second Terminal, run:
 
-          When you have a possible password, open another Terminal and run:
+       /challenge/verify
 
-             /challenge/verify
+    7. Enter your password when prompted.
 
-          Enter your password.
+    8. If it is correct, the verifier will give you your final
+       `pwn.college{...}` flag.
 
-          If it is accepted, the verifier will give you your final
-          pwn.college{...} flag.
+    9. Submit the final flag on the challenge page.
 
-          Stuck?
+    If you get stuck, ask a volunteer or use SENSAI for a hint.
 
-          The password should contain information taken from the different
-          posts. Think about what details someone might choose when creating
-          an easy-to-remember password.
 
-          If the Terminal is currently displaying the web server output,
-          use another Terminal to run /challenge/verify.
+- id: locked-treasure-chest
+  name: "Locked Treasure Chest"
+  description: |
+    You have found a digital treasure chest containing another ZIP file.
 
-          If you are still stuck, ask a volunteer for a hint or use SENSAI.
+    The flag is hidden in information about the ZIP file rather than
+    inside a normal file.
 
+    1. Go to the challenge folder:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: locked-treasure-chest
-        name: "Locked Treasure Chest"
-        description: |
-          You have found a digital treasure chest containing another ZIP file.
+       cd /challenge
 
-          The flag is hidden in information about the ZIP file rather than
-          inside a normal file.
+    2. Extract `digital_treasure.zip` into your home folder.
 
-          To start:
+       If you need a reminder of the `unzip` syntax, use its `--help`
+       option.
 
-             cd /challenge
+    3. Find the new file called `treasure.zip`.
 
-          Extract digital_treasure.zip into your home folder.
+       Do NOT unzip `treasure.zip`.
 
-          You will find another ZIP file inside. Do not extract this second
-          ZIP file.
+    4. Use `zipinfo` to investigate the information stored about
+       `treasure.zip`.
 
-          Instead, investigate the information stored about the ZIP file.
-          The command zipinfo can help you inspect ZIP files.
+       If you need a reminder of how to use `zipinfo`, try its
+       `--help` option.
 
-          If you are unsure how to use zipinfo, try:
+    5. Look through the information for the temporary flag beginning
+       with `FLAG{...}`.
 
-             zipinfo -h
+    6. Once you have found the complete temporary flag, run:
 
-          Use the help information to work out which option will show the
-          information you need.
+       /challenge/verify
 
-          Look through the information you find for the temporary FLAG{...}.
+    7. Enter the complete temporary flag, including `FLAG{...}`.
 
-          When you find the complete temporary flag, run:
+    8. The verifier will give you your final `pwn.college{...}` flag.
 
-             /challenge/verify
+    9. Submit the final flag on the challenge page.
 
-          Enter the complete temporary flag, including FLAG{}, to receive
-          your final pwn.college{...} flag.
+    If you get stuck, ask a volunteer or use SENSAI for a hint.
 
-          Stuck?
 
-          Think about where the second ZIP file was extracted and what
-          information a ZIP file can contain besides the files themselves.
+- id: secret-message-in-photo
+  name: "Secret Message in Photo"
+  description: |
+    You have found a suspicious image containing a hidden message.
 
-          If you are still stuck, ask a volunteer for a hint or use SENSAI.
+    The flag is hidden inside information extracted from the image.
 
+    1. Go to the challenge folder:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: secret-message-in-photo
-        name: "Secret Message in Photo"
-        description: |
-          A photograph called suspicious_doggo.jpg contains hidden
-          information.
+       cd /challenge
 
-          This is an example of steganography, where information is hidden
-          inside another file.
+    2. Look at the files provided and identify the image and any other
+       files that may contain useful information.
 
-          The photograph is protected by a passphrase. Somewhere in
-          secret.txt you can find the passphrase needed to extract the
-          hidden information.
+    3. Use `steghide` to investigate the image.
 
-          To start:
+       The image contains information that cannot be seen normally.
+       Your goal is to find and extract the hidden information, then
+       investigate what you have extracted.
 
-             cd /home/ubuntu/Secret-Message-in-Photo
+       If you need help with the command, use:
 
-          Find the passphrase in secret.txt.
+       steghide --help
 
-          You will then need to use steghide to extract the hidden
-          information from the photograph.
+    4. Find the temporary flag.
 
-          If you are unsure how steghide works, try:
+       It will look like:
 
-             steghide --help
+       FLAG{...}
 
-          Look through the available options for the ones that allow you to:
+    5. Once you have found the temporary flag, run:
 
-          - extract hidden information
-          - provide the passphrase
-          - specify the image containing the hidden information
-          - choose where the extracted information is saved
+       /challenge/verify
 
-          Save the extracted information as a file in your home folder so
-          you can read it afterwards.
+    6. Enter the complete temporary flag, including `FLAG{...}`.
 
-          Read the extracted file to find the temporary FLAG{...}.
+    7. The verifier will give you your final `pwn.college{...}` flag.
 
-          When you find the complete temporary flag, run:
+    8. Submit the final flag on the challenge page.
 
-             /challenge/verify
-
-          Enter the complete temporary flag, including FLAG{}, to receive
-          your final pwn.college{...} flag.
-
-          Stuck?
-
-          You need the passphrase, the correct image and the correct
-          steghide options. Use the help output to work out how those pieces
-          fit together.
-
-          If you are still stuck, ask a volunteer for a hint or use SENSAI.
-
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: buffer-overflow
-        name: "Buffer Overflow"
-        description: |
-          This challenge introduces the idea of a buffer overflow using a
-          deliberately simplified program.
-
-          A program has a limited amount of space available for the text you
-          enter. What happens when you give it more input than it was designed
-          to handle?
-
-          You do not need to understand advanced exploitation to solve this
-          challenge.
-
-          To start:
-
-             /challenge/buffer_overflow
-
-          The program will ask you for some input.
-
-          Experiment with different input lengths and pay attention to what
-          the program does. You are looking for the successful output produced
-          when the challenge's overflow condition is triggered.
-
-          Once you have found the successful output, run:
-
-             /challenge/verify
-
-          Enter the complete output when prompted. If it is correct, you will
-          receive your final pwn.college{...} flag.
-
-          Stuck?
-
-          The challenge is deliberately simplified: you are not being asked
-          to perform a real-world exploit. Focus on what changes when you
-          increase the amount of input you give the program.
-
-          If you are still stuck, ask a volunteer for a hint or use SENSAI.
+    If you get stuck, ask a volunteer or use SENSAI for a hint.
 
   - id: medium
     name: "🟠 Medium"
