@@ -36,7 +36,7 @@ description: |
 
 modules:
 
-  - id: beginner
+    - id: beginner
     name: "🟢 Beginner"
     description: |
       Never done a CTF before? Start here.
@@ -47,6 +47,8 @@ modules:
       The Terminal is where you type instructions for the computer. You will
       use it to find files, search for information and run the tools you need
       to solve challenges.
+
+      You can complete the challenges in any order.
 
       If you get stuck, try working it out with your team first. You can also
       ask a volunteer for a hint or use SENSAI through the Help option on
@@ -104,14 +106,26 @@ modules:
 
              /challenge/verify
 
-          7. Enter the complete FLAG{...} exactly as you found it.
+             When the verifier asks for the flag, enter the complete temporary
+             flag, including FLAG{}.
 
-          8. The verifier will give you your final pwn.college{...} flag.
+             For example, if the flag you found was:
 
-          9. Submit that flag on the challenge page.
+             FLAG{something_here}
 
-          Stuck? Think about what text you could search for with grep. You can
-          also ask a volunteer or use SENSAI through the Help option.
+             you would enter the whole flag, including FLAG{ and }.
+
+          7. If it is correct, the verifier will give you your final
+             pwn.college{...} flag.
+
+          8. Submit that final flag on the challenge page.
+
+          Stuck?
+
+          You are looking for text inside a file. Think about which command
+          can search a file for a particular word or piece of text.
+
+          If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
       - import:
@@ -129,8 +143,8 @@ modules:
 
           The password for vault.zip is hidden somewhere in vault_clue.txt.
 
-          Your job is to find the password, open the ZIP file and find the
-          flag inside.
+          Your job is to find the password, open the ZIP file and find
+          the flag inside.
 
           To start:
 
@@ -153,7 +167,8 @@ modules:
           4. Use grep to search vault_clue.txt for information about the
              password.
 
-             You learned how grep works in the previous challenge.
+             If you have not used grep before, look at the Grep Master
+             challenge in the Beginner module for an example of how it works.
 
           5. Once you have found the password, use unzip to open vault.zip.
 
@@ -188,14 +203,27 @@ modules:
 
               /challenge/verify
 
-          12. Enter the complete temporary flag.
+              When the verifier asks for the flag, enter the complete
+              temporary flag, including FLAG{}.
 
-          13. The verifier will give you your final pwn.college{...} flag.
+              For example, if the flag you found was:
 
-          14. Submit that flag on the challenge page.
+              FLAG{something_here}
 
-          Stuck? Think about what information you need before you can open
-          the ZIP file. You can also ask a volunteer or use SENSAI.
+              you would enter the whole flag, including FLAG{ and }.
+
+          12. If it is correct, the verifier will give you your final
+              pwn.college{...} flag.
+
+          13. Submit that final flag on the challenge page.
+
+          Stuck?
+
+          You need two things before you can open the vault: the ZIP file
+          and its password. Look at the other file in /challenge and think
+          about what information it might contain.
+
+          If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
       - import:
@@ -252,14 +280,27 @@ modules:
 
              /challenge/verify
 
-          7. Enter the complete FLAG{...} exactly as you found it.
+             When the verifier asks for the flag, enter the complete temporary
+             flag, including FLAG{}.
 
-          8. The verifier will give you your final pwn.college{...} flag.
+             For example, if the flag you found was:
 
-          9. Submit that flag on the challenge page.
+             FLAG{something_here}
 
-          Stuck? Think about what information an image can store besides
-          the visible picture. You can also ask a volunteer or use SENSAI.
+             you would enter the whole flag, including FLAG{ and }.
+
+          7. If it is correct, the verifier will give you your final
+             pwn.college{...} flag.
+
+          8. Submit that final flag on the challenge page.
+
+          Stuck?
+
+          Think about what information an image can store besides the visible
+          picture. The challenge mentions a tool that can show this
+          information.
+
+          If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
       - import:
@@ -355,9 +396,13 @@ modules:
           normal computer, use the Clipboard panel in the side tab of the
           pwn.college Desktop.
 
-          Stuck? Ask your team, ask a volunteer for a hint, or use SENSAI
-          through the Help option.
-  
+          Stuck?
+
+          The passphrase is somewhere on the webpage, but it may not be
+          visible on the page itself. Think about where a webpage stores
+          information that visitors normally do not see.
+
+          If you are still stuck, ask a volunteer for a hint or use SENSAI.
   - id: easy
     name: "🔵 Easy"
     description: |
