@@ -36,211 +36,331 @@ description: |
 
 modules:
 
-  - id: beginner
-    name: "🟢 Beginner"
+- id: beginner
+  name: "🟢 Beginner"
+  description: |
+  Never done a CTF before? Start here.
+
+  ```
+  These challenges introduce basic commands and simple ideas.
+  You do not need previous cybersecurity or programming experience.
+
+  The Terminal is where you type instructions for the computer. You will
+  use it to find files, search for information and run the tools you need
+  to solve challenges.
+
+  If you get stuck, try working it out with your team first. You can also
+  ask a volunteer for a hint or use SENSAI through the Help option on
+  pwn.college.
+  ```
+
+  challenges:
+
+  ```
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: grep-master
+    name: "Grep Master"
     description: |
-      Never done a CTF before? Start here.
+      You are looking for a hidden flag inside a very large text file
+      called haystack.txt.
 
-      These challenges introduce basic commands and simple ideas.
-      You do not need previous cybersecurity or programming experience.
+      You do not need to read the whole file yourself. Linux has a
+      command called grep which can search a file for text.
 
-    challenges:
+      To start:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: grep-master
-        name: "Grep Master"
-        description: |
-          You are looking for a hidden flag inside a very large text file
-          called haystack.txt.
+      1. Press Start.
 
-          You do not need to read the whole file yourself. Linux has a
-          command called grep which can search a file for text.
+         This opens the challenge and a Terminal. The Terminal is where
+         you type instructions for the computer.
 
-          To start:
+      2. Go to the challenge folder:
 
-          1. Open the Terminal.
-          2. Go to the challenge folder:
+         cd /challenge
 
-             cd /challenge
+         `cd` means change directory. It moves you into a different folder.
 
-          3. Type:
+      3. Type:
 
-             ls
+         ls
 
-             This shows you the files in the folder.
+         This lists the files in the folder.
 
-          4. Find haystack.txt.
+      4. Find haystack.txt.
 
-          5. Use grep to search the file for the hidden flag.
+         Remember that haystack.txt is a file, not a folder, so you do not
+         need to use cd on it.
 
-             The temporary flag will look like:
+      5. Use grep to search haystack.txt for the hidden flag.
 
-             FLAG{...}
+         The basic format is:
 
-          6. Once you find it, run:
+         grep "something to search for" filename
 
-             /challenge/verify
+         The temporary flag will begin with:
 
-          7. Enter the temporary flag.
-          8. The verifier will give you your final pwn.college{...} flag.
-          9. Submit that flag on the challenge page.
+         FLAG{
 
+      6. When you find the complete temporary flag, run:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: unlock-the-vault
-        name: "Unlock the Vault"
-        description: |
-          You are a treasure hunter and have found a locked ZIP file.
+         /challenge/verify
 
-          The challenge contains:
+      7. Enter the complete FLAG{...} exactly as you found it.
 
-          vault.zip
-          vault_clue.txt
+      8. The verifier will give you your final pwn.college{...} flag.
 
-          The password for vault.zip is hidden somewhere in vault_clue.txt.
+      9. Submit that flag on the challenge page.
 
-          Your job is to find the password, open the ZIP file and find
-          the flag inside.
+      Stuck? Think about what text you could search for with grep. You can
+      also ask a volunteer or use SENSAI through the Help option.
 
-          To start:
 
-          1. Open the Terminal.
-          2. Go to:
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: unlock-the-vault
+    name: "Unlock the Vault"
+    description: |
+      You are a treasure hunter and have found a locked ZIP file.
 
-             cd /challenge
+      The challenge contains:
 
-          3. Type:
+      vault.zip
+      vault_clue.txt
 
-             ls
+      The password for vault.zip is hidden somewhere in vault_clue.txt.
 
-             This will show you the challenge files.
+      Your job is to find the password, open the ZIP file and find the
+      flag inside.
 
-          4. Use grep to search vault_clue.txt and find the password.
+      To start:
 
-          5. Use unzip to open vault.zip.
+      1. Press Start.
 
-             You will need to extract the files into your home folder:
+         This opens the challenge and a Terminal.
 
-             unzip vault.zip -d /home/hacker
+      2. Go to the challenge folder:
 
-          6. When asked for the password, enter the password you found.
-             Nothing will appear while you type. This is normal.
+         cd /challenge
 
-          7. Go to your home folder:
+         `cd` means change directory. It moves you into a different folder.
 
-             cd /home/hacker
+      3. Type:
 
-          8. Type:
+         ls
 
-             ls
+         This lists the challenge files.
 
-             You should now see vault.txt.
+      4. Use grep to search vault_clue.txt for information about the
+         password.
 
-          9. Read the file using:
+         You learned how grep works in the previous challenge.
 
-             cat vault.txt
+      5. Once you have found the password, use unzip to open vault.zip.
 
-          10. Find the temporary FLAG{...}.
+         You will need to extract the files into your home folder:
 
-          11. Run:
+         unzip vault.zip -d /home/hacker
 
-              /challenge/verify
+      6. When asked for the password, enter the password you found.
 
-          12. Enter the temporary flag to receive your final
-              pwn.college{...} flag.
+         Nothing will appear while you type. This is normal. Type the
+         password and press Enter.
 
-          13. Submit the final flag on the challenge page.
+      7. Go to your home folder:
 
+         cd /home/hacker
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: the-artists-clue
-        name: "The Artist's Clue"
-        description: |
-          You are investigating a mysterious painting called art.jpg.
+      8. Type:
 
-          The flag is not hidden in the visible picture. It is hidden in
-          information stored alongside the image.
+         ls
 
-          This extra information is called metadata.
+         Look for the file that was extracted from the vault.
 
-          You can use a command called exiftool to look at an image's
-          metadata.
+      9. Use cat to read the contents of the file.
 
-          To start:
+         For example:
 
-          1. Open the Terminal.
-          2. Go to:
+         cat filename.txt
 
-             cd /home/ubuntu/Artists-Clue
+      10. Find the complete temporary FLAG{...}.
 
-          3. Type:
+      11. Run:
 
-             ls
+          /challenge/verify
 
-             You should see art.jpg.
+      12. Enter the complete temporary flag.
 
-          4. Use exiftool to inspect the image.
+      13. The verifier will give you your final pwn.college{...} flag.
 
-          5. Look through the information it displays for a temporary flag
-             beginning with FLAG{...}.
+      14. Submit that flag on the challenge page.
 
-          6. Run:
+      Stuck? Think about what information you need before you can open
+      the ZIP file. You can also ask a volunteer or use SENSAI.
 
-             /challenge/verify
 
-          7. Enter the temporary flag.
-          8. The verifier will give you your final pwn.college{...} flag.
-          9. Submit that flag on the challenge page.
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: the-artists-clue
+    name: "The Artist's Clue"
+    description: |
+      You are investigating a mysterious painting called art.jpg.
 
+      The flag is not hidden in the visible picture. It is hidden in
+      information stored alongside the image.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: pale-red-horse-squad
-        name: "Pale Red Horse Squad"
-        description: |
-          There is a secret club with a hidden entry passphrase.
+      This extra information is called metadata.
 
-          The passphrase has been left somewhere on the club's webpage.
-          Your job is to find it.
+      Metadata is information stored with a file. An image can contain
+      information about the image in addition to the picture itself.
 
-          To start:
+      You can use a command called exiftool to look at an image's metadata.
 
-          1. Open the Terminal.
-          2. Run:
+      To start:
 
-             cd /challenge
-             ./verify
+      1. Press Start.
 
-          3. Leave the Terminal running.
-          4. Open the pwn.college Desktop.
-          5. Open Firefox inside the Desktop.
-          6. Visit:
+         This opens the challenge and a Terminal.
 
-             http://127.0.0.1:5000
+      2. Go to the folder containing the image:
 
-          7. Look around the webpage and try to find the hidden passphrase.
-          8. Enter the passphrase into the webpage.
-          9. The website will give you a pwn.college{...} flag.
-          10. Submit that flag on the challenge page.
+         cd /home/ubuntu/Artists-Clue
 
-          Important:
+         `cd` means change directory. It moves you into a different folder.
 
-          127.0.0.1 refers to the challenge computer, not your own laptop.
+      3. Type:
 
-          This is why you need to use Firefox inside the pwn.college Desktop.
+         ls
 
-          If you need to copy the flag from the virtual Desktop to your
-          normal browser, use the Clipboard panel in the side tab of the
-          virtual Desktop.
+         You should see art.jpg.
 
+      4. Use exiftool to inspect the image.
 
+         The basic format is:
+
+         exiftool filename
+
+         Use it to inspect art.jpg.
+
+      5. Look carefully through the information it displays.
+
+         You are looking for a temporary flag beginning with:
+
+         FLAG{
+
+      6. When you find the complete temporary flag, run:
+
+         /challenge/verify
+
+      7. Enter the complete FLAG{...} exactly as you found it.
+
+      8. The verifier will give you your final pwn.college{...} flag.
+
+      9. Submit that flag on the challenge page.
+
+      Stuck? Think about what information an image can store besides
+      the visible picture. You can also ask a volunteer or use SENSAI.
+
+
+  - import:
+      dojo: cyber-security~59368da7
+      module: web
+      challenge: pale-red-horse-squad
+    name: "Pale Red Horse Squad"
+    description: |
+      There is a secret club with a hidden entry passphrase.
+
+      The passphrase has been left somewhere on the club's webpage.
+      Your job is to find it.
+
+      This challenge introduces you to webpages, localhost and
+      investigating how a webpage works.
+
+      To start:
+
+      1. Press Start.
+
+         This opens the challenge and a Terminal. The Terminal is where
+         you type instructions for the computer.
+
+      2. Go to the challenge folder:
+
+         cd /challenge
+
+         `cd` means change directory. It moves you into a different folder.
+
+      3. Start the challenge:
+
+         ./verify
+
+         This starts the local website.
+
+         Leave the Terminal running while you use the website.
+
+      ### Open the website
+
+      4. At the bottom of the Terminal, find the Desktop button next to
+         the Code button.
+
+         Click Desktop.
+
+         The pwn.college virtual Desktop will open in a new browser tab.
+
+      5. Find and open Firefox inside the virtual Desktop.
+
+         Firefox is a web browser, like Chrome or Edge.
+
+      6. In Firefox, click the address bar at the top and enter:
+
+         http://127.0.0.1:5000
+
+         You can type the address manually or copy and paste it.
+
+         Then press Enter.
+
+      Important:
+
+      Use Firefox inside the pwn.college Desktop.
+
+      Do not enter the address into the browser you normally use on
+      your own computer.
+
+      127.0.0.1 means this computer. In this challenge, the website is
+      running on the pwn.college virtual computer, which is why you need
+      to use Firefox inside the Desktop.
+
+      ### Find the passphrase
+
+      Look around the webpage and try to find the hidden passphrase.
+
+      If you cannot find it by looking at the visible page, try
+      investigating how the webpage is built.
+
+      Firefox has Developer Tools which can help you investigate
+      information behind a webpage.
+
+      You do not need previous web development experience to solve this
+      challenge.
+
+      Once you find the passphrase, enter it into the webpage.
+
+      The website will give you a pwn.college{...} flag.
+
+      ### Submit your flag
+
+      Copy the complete pwn.college{...} flag and submit it on the
+      competition challenge page.
+
+      If you need to move text between the virtual Desktop and your
+      normal computer, use the Clipboard panel in the side tab of the
+      pwn.college Desktop.
+
+      Stuck? Ask your team, ask a volunteer for a hint, or use SENSAI
+      through the Help option.
+  
   - id: easy
     name: "🔵 Easy"
     description: |
