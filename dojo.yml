@@ -5,15 +5,44 @@ password: LUCS26-CTF-SETUP
 
 description: |
   Leeds Computing Society Capture the Flag competition.
-  Work in teams of up to 4 to solve cybersecurity challenges.
-  Each challenge is worth one point.
+
+  Work in teams of up to four and solve as many challenges as you can
+  before the competition ends.
+
+  You can attempt the challenges in any order. You do not need to
+  complete the easier challenges before trying a harder one.
+
+  Each challenge gives you a flag when you solve it. Submit the final
+  pwn.college{...} flag on the challenge page to score.
+
+  Never done a CTF before?
+  Start with the Beginner challenges. They are designed to introduce
+  you to the tools and ideas you need as you go.
+
+  Important things to know:
+
+  - Each challenge runs inside pwn.college.
+  - Use the Terminal for command-line challenges.
+  - If a challenge uses localhost or 127.0.0.1, open Firefox inside
+    the pwn.college Desktop.
+  - Your normal browser is outside the virtual computer.
+  - If you need to move text between the virtual computer and your
+    normal browser, use the Clipboard panel in the side tab of the
+    pwn.college Desktop.
+  - If you get stuck, ask your team or a volunteer for help.
+  - You can also use SENSAI, the AI helper built into pwn.college.
+    Start your challenge first, then use the Help link at the top
+    of the page to access SENSAI.
 
 modules:
 
-  - id: forensics
-    name: Forensics
+  - id: beginner
+    name: "🟢 Beginner"
     description: |
-      Find information hidden in files and images.
+      Never done a CTF before? Start here.
+
+      These challenges introduce basic commands and simple ideas.
+      You do not need previous cybersecurity or programming experience.
 
     challenges:
 
@@ -21,122 +50,534 @@ modules:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: grep-master
-        name: "Grep Master [Easy]"
+        name: "Grep Master"
+        description: |
+          You are looking for a hidden flag inside a very large text file
+          called haystack.txt.
+
+          You do not need to read the whole file yourself. Linux has a
+          command called grep which can search a file for text.
+
+          To start:
+
+          1. Open the Terminal.
+          2. Go to the challenge folder:
+
+             cd /challenge
+
+          3. Type:
+
+             ls
+
+             This shows you the files in the folder.
+
+          4. Find haystack.txt.
+
+          5. Use grep to search the file for the hidden flag.
+
+             The temporary flag will look like:
+
+             FLAG{...}
+
+          6. Once you find it, run:
+
+             /challenge/verify
+
+          7. Enter the temporary flag.
+          8. The verifier will give you your final pwn.college{...} flag.
+          9. Submit that flag on the challenge page.
+
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: unlock-the-vault
-        name: "Unlock the Vault [Easy]"
+        name: "Unlock the Vault"
+        description: |
+          You are a treasure hunter and have found a locked ZIP file.
+
+          The challenge contains:
+
+          vault.zip
+          vault_clue.txt
+
+          The password for vault.zip is hidden somewhere in vault_clue.txt.
+
+          Your job is to find the password, open the ZIP file and find
+          the flag inside.
+
+          To start:
+
+          1. Open the Terminal.
+          2. Go to:
+
+             cd /challenge
+
+          3. Type:
+
+             ls
+
+             This will show you the challenge files.
+
+          4. Use grep to search vault_clue.txt and find the password.
+
+          5. Use unzip to open vault.zip.
+
+             You will need to extract the files into your home folder:
+
+             unzip vault.zip -d /home/hacker
+
+          6. When asked for the password, enter the password you found.
+             Nothing will appear while you type. This is normal.
+
+          7. Go to your home folder:
+
+             cd /home/hacker
+
+          8. Type:
+
+             ls
+
+             You should now see vault.txt.
+
+          9. Read the file using:
+
+             cat vault.txt
+
+          10. Find the temporary FLAG{...}.
+
+          11. Run:
+
+              /challenge/verify
+
+          12. Enter the temporary flag to receive your final
+              pwn.college{...} flag.
+
+          13. Submit the final flag on the challenge page.
+
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: the-artists-clue
-        name: "The Artist's Clue [Easy]"
+        name: "The Artist's Clue"
+        description: |
+          You are investigating a mysterious painting called art.jpg.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: locked-treasure-chest
-        name: "Locked Treasure Chest [Easy-Medium]"
+          The flag is not hidden in the visible picture. It is hidden in
+          information stored alongside the image.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: secret-message-in-photo
-        name: "Secret Message in Photo [Medium]"
+          This extra information is called metadata.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: hidden-treasures-in-the-picture
-        name: "Hidden Treasures in the Picture [Hard]"
+          You can use a command called exiftool to look at an image's
+          metadata.
 
+          To start:
 
-  - id: web
-    name: Web
-    description: |
-      Find and exploit simple web vulnerabilities.
+          1. Open the Terminal.
+          2. Go to:
 
-      For the web challenges, use Firefox inside the pwn.college Desktop.
-      When instructed to visit 127.0.0.1:5000, enter it in Firefox inside the Desktop.
+             cd /home/ubuntu/Artists-Clue
 
-    challenges:
+          3. Type:
+
+             ls
+
+             You should see art.jpg.
+
+          4. Use exiftool to inspect the image.
+
+          5. Look through the information it displays for a temporary flag
+             beginning with FLAG{...}.
+
+          6. Run:
+
+             /challenge/verify
+
+          7. Enter the temporary flag.
+          8. The verifier will give you your final pwn.college{...} flag.
+          9. Submit that flag on the challenge page.
+
 
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: pale-red-horse-squad
-        name: "Pale Red Horse Squad [Easy]"
+        name: "Pale Red Horse Squad"
+        description: |
+          There is a secret club with a hidden entry passphrase.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: am-i-admin
-        name: "Am I Admin? [Easy-Medium]"
+          The passphrase has been left somewhere on the club's webpage.
+          Your job is to find it.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: am-i-admin-2
-        name: "Am I Admin 2? [Medium]"
+          To start:
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: creepy-crawly
-        name: "Creepy Crawly [Hard]"
+          1. Open the Terminal.
+          2. Run:
+
+             cd /challenge
+             ./verify
+
+          3. Leave the Terminal running.
+          4. Open the pwn.college Desktop.
+          5. Open Firefox inside the Desktop.
+          6. Visit:
+
+             http://127.0.0.1:5000
+
+          7. Look around the webpage and try to find the hidden passphrase.
+          8. Enter the passphrase into the webpage.
+          9. The website will give you a pwn.college{...} flag.
+          10. Submit that flag on the challenge page.
+
+          Important:
+
+          127.0.0.1 refers to the challenge computer, not your own laptop.
+
+          This is why you need to use Firefox inside the pwn.college Desktop.
+
+          If you need to copy the flag from the virtual Desktop to your
+          normal browser, use the Clipboard panel in the side tab of the
+          virtual Desktop.
 
 
-  - id: programs
-    name: PWN / Reverse Engineering
+  - id: easy
+    name: "🔵 Easy"
     description: |
-      Investigate programs and work out how they behave.
-
-      For the Reverse Password Plaintext and Reverse Cipher Password
-      challenges, select VSCode Workspace from the challenge menu and
-      use it inside the pwn.college Desktop.
+      These challenges are still approachable for beginners, but require
+      you to work out a little more for yourself.
 
     challenges:
 
       - import:
           dojo: cyber-security~59368da7
-          module: pwn
-          challenge: buffer-overflow
-        name: "Buffer Overflow [Easy-Medium]"
+          module: forensics
+          challenge: chatty-server
+        name: "Chatty Server"
+        description: |
+          You are investigating a server log called server.log.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: magic-number
-        name: "Magic Number [Medium]"
+          The log contains lots of activity from different users. Somewhere
+          in the log, a user has left behind three pieces of a temporary flag.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: reverse-password-plaintext
-        name: "Reverse Password Plaintext [Medium]"
+          There are also fake flags, so you need to work out which information
+          is relevant.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: reverse-password-cipher
-        name: "Reverse Cipher Password [Hard]"
+          Start by going to:
 
+          cd /home/ubuntu/Chatty-Server
 
-  - id: osint
-    name: OSINT
-    description: |
-      Find information using publicly available information.
+          Look through server.log and use grep to make the search easier.
 
-      For the Social Media Password challenge, use Firefox inside the
-      pwn.college Desktop to open 127.0.0.1:5000.
+          Find all three parts of the flag and put them together.
 
-    challenges:
+          When you have the complete FLAG{...}, run:
+
+          /challenge/verify
+
+          Enter the temporary flag to receive your final pwn.college{...} flag.
+
 
       - import:
           dojo: cyber-security~59368da7
           module: osint
           challenge: socialmediapassword
-        name: "Social Media Password [Easy]"
+        name: "Social Media Password"
+        description: |
+          You have been given a fake social media profile belonging to
+          @random_dude12.
+
+          The profile contains three posts with information about the person.
+
+          Your job is to look at the information they have shared and work
+          out a possible password using clues from their posts.
+
+          To start:
+
+          1. Open the Terminal.
+          2. Run:
+
+             /challenge/run
+
+          3. Open the pwn.college Desktop.
+          4. Open Firefox.
+          5. Visit:
+
+             http://127.0.0.1:5000
+
+          6. Read the three posts carefully.
+          7. Use information from the posts to construct a possible password.
+          8. Run:
+
+             /challenge/verify
+
+          9. Enter your password.
+          10. If it is accepted, you will receive your pwn.college{...} flag.
+          11. Submit that flag on the challenge page.
+
+          Everything in this challenge is fictional and runs locally inside
+          the challenge.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: locked-treasure-chest
+        name: "Locked Treasure Chest"
+        description: |
+          You have found a digital treasure chest containing another ZIP file.
+
+          The flag is hidden in information about the ZIP file rather than
+          inside a normal file.
+
+          Start by extracting digital_treasure.zip into your home folder.
+
+          You will then find treasure.zip.
+
+          Do not extract treasure.zip.
+
+          Instead, investigate the information stored about the ZIP file.
+          The command zipinfo can help you do this.
+
+          Look through the information you find for the temporary FLAG{...}.
+
+          Once you have it, run:
+
+          /challenge/verify
+
+          Enter the temporary flag to receive your final pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: secret-message-in-photo
+        name: "Secret Message in Photo"
+        description: |
+          A photograph called suspicious_doggo.jpg contains hidden information.
+
+          This is an example of steganography, where information is hidden
+          inside another file.
+
+          The photograph is protected by a passphrase.
+
+          Somewhere in secret.txt you can find the passphrase needed to
+          extract the hidden information.
+
+          Start by going to:
+
+          cd /home/ubuntu/Secret-Message-in-Photo
+
+          Find the passphrase in secret.txt.
+
+          You will then need to use the steghide command to extract the
+          hidden information from the photograph.
+
+          Save the extracted information somewhere in your home folder,
+          then read it to find the temporary FLAG{...}.
+
+          When you have the temporary flag, run:
+
+          /challenge/verify
+
+          Enter it to receive your final pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: pwn
+          challenge: buffer-overflow
+        name: "Buffer Overflow"
+        description: |
+          This challenge introduces the idea of a buffer overflow using a
+          deliberately simplified program.
+
+          The program expects you to enter some text. If you enter the right
+          amount of text, the program will trigger the challenge's overflow
+          condition.
+
+          You do not need to understand advanced exploitation to solve this.
+
+          Start by running:
+
+          /challenge/buffer_overflow
+
+          Try different input lengths until the program gives you its
+          successful output.
+
+          Then run:
+
+          /challenge/verify
+
+          Enter the successful output to receive your pwn.college{...} flag.
+
+
+  - id: medium
+    name: "🟠 Medium"
+    description: |
+      These challenges require you to combine ideas, investigate more
+      carefully or understand a security concept.
+
+    challenges:
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: web
+          challenge: am-i-admin
+        name: "Am I Admin?"
+        description: |
+          This website uses a browser cookie to decide whether you are an
+          administrator.
+
+          Your job is to understand how the website is making that decision
+          and see whether you can change the information stored in your browser.
+
+          Start the web application with:
+
+          /challenge/app.py
+
+          Then open Firefox inside the pwn.college Desktop and visit:
+
+          http://127.0.0.1:5000
+
+          Investigate the cookies used by the website and see what happens
+          when their values change.
+
+          If you can make the website treat you as an administrator, the
+          admin page will show you the flag.
+
+          Submit the pwn.college{...} flag shown by the website.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: pwn
+          challenge: magic-number
+        name: "Magic Number"
+        description: |
+          A program is hiding a secret number.
+
+          Each time the program runs, it chooses one number from a small set
+          of possible values.
+
+          Your job is to inspect the program and work out what those possible
+          numbers are.
+
+          One useful command is:
+
+          strings
+
+          Start by investigating:
+
+          /challenge/magic_numbers
+
+          Then run the program and try the values you have found.
+
+          When you guess correctly, the program will give you a special
+          output string.
+
+          Give that string to:
+
+          /challenge/verify
+
+          to receive your pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: hidden-treasures-in-the-picture
+        name: "Hidden Treasures in the Picture"
+        description: |
+          A mysterious image contains four separate pieces of a flag.
+
+          The pieces have been hidden using several different techniques.
+
+          Your job is to investigate the image and find all four pieces.
+
+          You may find tools such as these useful:
+
+          strings
+          grep
+          exiftool
+          steghide
+          binwalk
+
+          Keep track of each part as you find it.
+
+          Once you have all four pieces, put them together to make the
+          complete temporary FLAG{...}.
+
+          Run:
+
+          /challenge/verify
+
+          Enter the complete temporary flag to receive your final
+          pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: web
+          challenge: am-i-admin-2
+        name: "Am I Admin 2?"
+        description: |
+          This is a harder version of Am I Admin?
+
+          The website still uses a browser cookie to decide whether you are
+          an administrator, but the previous approach no longer works.
+
+          This time you also have access to the Python code behind the website.
+
+          Start the application with:
+
+          /challenge/app.py
+
+          Open Firefox inside the pwn.college Desktop and visit:
+
+          http://127.0.0.1:5000
+
+          Investigate the cookie and then look at the Python code in /challenge.
+
+          Work out how the website checks the cookie and what value it expects.
+
+          If you can make the website treat you as an administrator, it will
+          show you the pwn.college{...} flag.
+
+
+  - id: hard
+    name: "🔴 Hard"
+    description: |
+      These challenges are intended for participants who already have some
+      programming or cybersecurity experience.
+
+      They provide less guidance and require you to work out more of the
+      solution yourself.
+
+    challenges:
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: pwn
+          challenge: reverse-password-plaintext
+        name: "Reverse Plaintext Password"
+        description: |
+          A Python program generates a password from several lists of
+          characters.
+
+          You have access to the source code.
+
+          Your job is to follow the program's logic and work out exactly
+          which characters are selected and in what order.
+
+          Open the VS Code Workspace and inspect:
+
+          /challenge/plaintextPassword.py
+
+          Follow the functions used to construct the password.
+
+          Once you have worked out the password, run:
+
+          /challenge/verify
+
+          Enter it to receive your pwn.college{...} flag.
