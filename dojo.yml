@@ -41,7 +41,6 @@ modules:
   description: |
   Never done a CTF before? Start here.
 
-  ```
   These challenges introduce basic commands and simple ideas.
   You do not need previous cybersecurity or programming experience.
 
@@ -52,11 +51,9 @@ modules:
   If you get stuck, try working it out with your team first. You can also
   ask a volunteer for a hint or use SENSAI through the Help option on
   pwn.college.
-  ```
 
   challenges:
 
-  ```
   - import:
       dojo: cyber-security~59368da7
       module: forensics
