@@ -403,7 +403,7 @@ modules:
           information that visitors normally do not see.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
-    
+
   - id: easy
     name: "🔵 Easy"
     description: |
@@ -683,139 +683,139 @@ modules:
           increase the amount of input you give the program.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
-          
+
   - id: medium
-      name: "🟠 Medium"
-      description: |
-        These challenges require you to combine ideas, investigate more
-        carefully or understand a security concept.
-  
-      challenges:
-  
-        - import:
-            dojo: cyber-security~59368da7
-            module: web
-            challenge: am-i-admin
-          name: "Am I Admin?"
-          description: |
-            This website uses a browser cookie to decide whether you are an
-            administrator.
-  
-            Your job is to understand how the website is making that decision
-            and see whether you can change the information stored in your browser.
-  
-            Start the web application with:
-  
-            /challenge/app.py
-  
-            Then open Firefox inside the pwn.college Desktop and visit:
-  
-            http://127.0.0.1:5000
-  
-            Investigate the cookies used by the website and see what happens
-            when their values change.
-  
-            If you can make the website treat you as an administrator, the
-            admin page will show you the flag.
-  
-            Submit the pwn.college{...} flag shown by the website.
-  
-  
-        - import:
-            dojo: cyber-security~59368da7
-            module: pwn
-            challenge: magic-number
-          name: "Magic Number"
-          description: |
-            A program is hiding a secret number.
-  
-            Each time the program runs, it chooses one number from a small set
-            of possible values.
-  
-            Your job is to inspect the program and work out what those possible
-            numbers are.
-  
-            One useful command is:
-  
-            strings
-  
-            Start by investigating:
-  
-            /challenge/magic_numbers
-  
-            Then run the program and try the values you have found.
-  
-            When you guess correctly, the program will give you a special
-            output string.
-  
-            Give that string to:
-  
-            /challenge/verify
-  
-            to receive your pwn.college{...} flag.
-  
-  
-        - import:
-            dojo: cyber-security~59368da7
-            module: forensics
-            challenge: hidden-treasures-in-the-picture
-          name: "Hidden Treasures in the Picture"
-          description: |
-            A mysterious image contains four separate pieces of a flag.
-  
-            The pieces have been hidden using several different techniques.
-  
-            Your job is to investigate the image and find all four pieces.
-  
-            You may find tools such as these useful:
-  
-            strings
-            grep
-            exiftool
-            steghide
-            binwalk
-  
-            Keep track of each part as you find it.
-  
-            Once you have all four pieces, put them together to make the
-            complete temporary FLAG{...}.
-  
-            Run:
-  
-            /challenge/verify
-  
-            Enter the complete temporary flag to receive your final
-            pwn.college{...} flag.
-  
-  
-        - import:
-            dojo: cyber-security~59368da7
-            module: web
-            challenge: am-i-admin-2
-          name: "Am I Admin 2?"
-          description: |
-            This is a harder version of Am I Admin?
-  
-            The website still uses a browser cookie to decide whether you are
-            an administrator, but the previous approach no longer works.
-  
-            This time you also have access to the Python code behind the website.
-  
-            Start the application with:
-  
-            /challenge/app.py
-  
-            Open Firefox inside the pwn.college Desktop and visit:
-  
-            http://127.0.0.1:5000
-  
-            Investigate the cookie and then look at the Python code in /challenge.
-  
-            Work out how the website checks the cookie and what value it expects.
-  
-            If you can make the website treat you as an administrator, it will
-            show you the pwn.college{...} flag.
-  
+    name: "🟠 Medium"
+    description: |
+      These challenges require you to combine ideas, investigate more
+      carefully or understand a security concept.
+
+    challenges:
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: web
+          challenge: am-i-admin
+        name: "Am I Admin?"
+        description: |
+          This website uses a browser cookie to decide whether you are an
+          administrator.
+
+          Your job is to understand how the website is making that decision
+          and see whether you can change the information stored in your browser.
+
+          Start the web application with:
+
+          /challenge/app.py
+
+          Then open Firefox inside the pwn.college Desktop and visit:
+
+          http://127.0.0.1:5000
+
+          Investigate the cookies used by the website and see what happens
+          when their values change.
+
+          If you can make the website treat you as an administrator, the
+          admin page will show you the flag.
+
+          Submit the pwn.college{...} flag shown by the website.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: pwn
+          challenge: magic-number
+        name: "Magic Number"
+        description: |
+          A program is hiding a secret number.
+
+          Each time the program runs, it chooses one number from a small set
+          of possible values.
+
+          Your job is to inspect the program and work out what those possible
+          numbers are.
+
+          One useful command is:
+
+          strings
+
+          Start by investigating:
+
+          /challenge/magic_numbers
+
+          Then run the program and try the values you have found.
+
+          When you guess correctly, the program will give you a special
+          output string.
+
+          Give that string to:
+
+          /challenge/verify
+
+          to receive your pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: hidden-treasures-in-the-picture
+        name: "Hidden Treasures in the Picture"
+        description: |
+          A mysterious image contains four separate pieces of a flag.
+
+          The pieces have been hidden using several different techniques.
+
+          Your job is to investigate the image and find all four pieces.
+
+          You may find tools such as these useful:
+
+          strings
+          grep
+          exiftool
+          steghide
+          binwalk
+
+          Keep track of each part as you find it.
+
+          Once you have all four pieces, put them together to make the
+          complete temporary FLAG{...}.
+
+          Run:
+
+          /challenge/verify
+
+          Enter the complete temporary flag to receive your final
+          pwn.college{...} flag.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: web
+          challenge: am-i-admin-2
+        name: "Am I Admin 2?"
+        description: |
+          This is a harder version of Am I Admin?
+
+          The website still uses a browser cookie to decide whether you are
+          an administrator, but the previous approach no longer works.
+
+          This time you also have access to the Python code behind the website.
+
+          Start the application with:
+
+          /challenge/app.py
+
+          Open Firefox inside the pwn.college Desktop and visit:
+
+          http://127.0.0.1:5000
+
+          Investigate the cookie and then look at the Python code in /challenge.
+
+          Work out how the website checks the cookie and what value it expects.
+
+          If you can make the website treat you as an administrator, it will
+          show you the pwn.college{...} flag.
+
 
   - id: hard
     name: "🔴 Hard"
