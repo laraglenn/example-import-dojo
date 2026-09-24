@@ -405,19 +405,98 @@ modules:
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
   - id: easy
-    name: "🔵 Easy"
-    description: |
-      These challenges are still approachable for beginners, but require
-      you to work out a little more for yourself.
+      name: "🔵 Easy"
+      description: |
+        These challenges build on the skills introduced in Beginner and require
+        you to investigate information more carefully or combine multiple steps.
+  
+        The instructions provide enough information to get started, but you may
+        need to work out the exact commands or approach yourself.
+  
+        If you get stuck, ask a volunteer or use SENSAI for a hint.
 
-      You may need to combine commands, investigate information more carefully,
-      or use a tool's help options to work out the exact syntax.
+    challenges:
 
-      If you get stuck, try to identify what you know and what you still need
-      to work out before asking for help. You can ask a volunteer for a hint
-      or use SENSAI through the Help option on pwn.college.
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: chatty-server
+        name: "Chatty Server"
+        description: |
+          You are investigating a server log called `server.log`.
 
-    e page.
+          The log contains activity from lots of different users. Somewhere in
+          the log, a temporary flag has been hidden.
+
+          There are also fake flags and unrelated activity in the log, so you
+          will need to work out which information is relevant.
+
+          1. Go to the challenge folder:
+
+             cd /home/ubuntu/Chatty-Server
+
+          2. Use `grep` to search through `server.log`.
+
+          3. Find the complete temporary flag.
+
+             It will look like:
+
+             FLAG{...}
+
+          4. Once you have found the temporary flag, run:
+
+             /challenge/verify
+
+          5. Enter the complete temporary flag, including `FLAG{...}`.
+
+          6. The verifier will give you your final `pwn.college{...}` flag.
+
+          7. Submit the final flag on the challenge page.
+
+          If you get stuck, ask a volunteer or use SENSAI for a hint.
+
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: osint
+          challenge: socialmediapassword
+        name: "Social Media Password"
+        description: |
+          You are investigating a fake social media profile belonging to
+          `@random_dude12`.
+
+          The profile contains three posts with information about the person.
+          Use clues from the posts to work out a possible password.
+
+          1. Start the challenge by running:
+
+             /challenge/run
+
+             This starts the website. Leave this Terminal running while you
+             complete the challenge.
+
+          2. Open the Desktop and launch Firefox.
+
+          3. Go to:
+
+             http://127.0.0.1:5000
+
+          4. Read the three posts and look for information that could be used
+             to create a password.
+
+          5. When you think you have the password, open a second Terminal in
+             the Desktop.
+
+          6. In the second Terminal, run:
+
+             /challenge/verify
+
+          7. Enter your password when prompted.
+
+          8. If it is correct, the verifier will give you your final
+             `pwn.college{...}` flag.
+
+          9. Submit the final flag on the challenge page.
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
 
