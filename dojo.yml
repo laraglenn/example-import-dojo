@@ -405,180 +405,180 @@ modules:
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
   - id: easy
-  name: "🔵 Easy"
-  description: |
-    These challenges introduce slightly more involved Linux and
-    cybersecurity tasks. You may need to combine commands, investigate
-    files, or work out which information is relevant.
-
-    The instructions give you the tools and direction needed to get started,
-    but you may need to investigate further to find the flag.
-
-    If you get stuck, ask a volunteer or use SENSAI for a hint.
-
-
-- id: chatty-server
-  name: "Chatty Server"
-  description: |
-    You are investigating a server log called `server.log`.
-
-    The log contains activity from lots of different users. Somewhere in
-    the log, a temporary flag has been hidden.
-
-    There are also fake flags and unrelated activity in the log, so you
-    will need to work out which information is relevant.
-
-    1. Go to the challenge folder:
-
-       cd /home/ubuntu/Chatty-Server
-
-    2. Use `grep` to search through `server.log`.
-
-    3. Find the complete temporary flag.
-
-       It will look like:
-
-       FLAG{...}
-
-    4. Once you have found the temporary flag, run:
-
-       /challenge/verify
-
-    5. Enter the complete temporary flag, including `FLAG{...}`.
-
-    6. The verifier will give you your final `pwn.college{...}` flag.
-
-    7. Submit the final flag on the challenge page.
-
-    If you get stuck, ask a volunteer or use SENSAI for a hint.
-
-
-- id: social-media-password
-  name: "Social Media Password"
-  description: |
-    You are investigating a fake social media profile belonging to
-    `@random_dude12`.
-
-    The profile contains three posts with information about the person.
-    Use clues from the posts to work out a possible password.
-
-    1. Start the challenge by running:
-
-       /challenge/run
-
-       This starts the website. Leave this Terminal running while you
-       complete the challenge.
-
-    2. Open the Desktop and launch Firefox.
-
-    3. Go to:
-
-       http://127.0.0.1:5000
-
-    4. Read the three posts and look for information that could be used
-       to create a password.
-
-    5. When you think you have the password, open a second Terminal in
-       the Desktop.
-
-    6. In the second Terminal, run:
-
-       /challenge/verify
-
-    7. Enter your password when prompted.
-
-    8. If it is correct, the verifier will give you your final
-       `pwn.college{...}` flag.
-
-    9. Submit the final flag on the challenge page.
-
-    If you get stuck, ask a volunteer or use SENSAI for a hint.
-
-
-- id: locked-treasure-chest
-  name: "Locked Treasure Chest"
-  description: |
-    You have found a digital treasure chest containing another ZIP file.
-
-    The flag is hidden in information about the ZIP file rather than
-    inside a normal file.
-
-    1. Go to the challenge folder:
-
-       cd /challenge
-
-    2. Extract `digital_treasure.zip` into your home folder.
-
-       If you need a reminder of the `unzip` syntax, use its `--help`
-       option.
-
-    3. Find the new file called `treasure.zip`.
-
-       Do NOT unzip `treasure.zip`.
-
-    4. Use `zipinfo` to investigate the information stored about
-       `treasure.zip`.
-
-       If you need a reminder of how to use `zipinfo`, try its
-       `--help` option.
-
-    5. Look through the information for the temporary flag beginning
-       with `FLAG{...}`.
-
-    6. Once you have found the complete temporary flag, run:
-
-       /challenge/verify
-
-    7. Enter the complete temporary flag, including `FLAG{...}`.
-
-    8. The verifier will give you your final `pwn.college{...}` flag.
-
-    9. Submit the final flag on the challenge page.
-
-    If you get stuck, ask a volunteer or use SENSAI for a hint.
-
-
-- id: secret-message-in-photo
-  name: "Secret Message in Photo"
-  description: |
-    You have found a suspicious image containing a hidden message.
-
-    The flag is hidden inside information extracted from the image.
-
-    1. Go to the challenge folder:
-
-       cd /challenge
-
-    2. Look at the files provided and identify the image and any other
-       files that may contain useful information.
-
-    3. Use `steghide` to investigate the image.
-
-       The image contains information that cannot be seen normally.
-       Your goal is to find and extract the hidden information, then
-       investigate what you have extracted.
-
-       If you need help with the command, use:
-
-       steghide --help
-
-    4. Find the temporary flag.
-
-       It will look like:
-
-       FLAG{...}
-
-    5. Once you have found the temporary flag, run:
-
-       /challenge/verify
-
-    6. Enter the complete temporary flag, including `FLAG{...}`.
-
-    7. The verifier will give you your final `pwn.college{...}` flag.
-
-    8. Submit the final flag on the challenge page.
-
-    If you get stuck, ask a volunteer or use SENSAI for a hint.
+    name: "🔵 Easy"
+    description: |
+      These challenges introduce slightly more involved Linux and
+      cybersecurity tasks. You may need to combine commands, investigate
+      files, or work out which information is relevant.
+  
+      The instructions give you the tools and direction needed to get started,
+      but you may need to investigate further to find the flag.
+  
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
+  
+  
+  - id: chatty-server
+    name: "Chatty Server"
+    description: |
+      You are investigating a server log called `server.log`.
+  
+      The log contains activity from lots of different users. Somewhere in
+      the log, a temporary flag has been hidden.
+  
+      There are also fake flags and unrelated activity in the log, so you
+      will need to work out which information is relevant.
+  
+      1. Go to the challenge folder:
+  
+         cd /home/ubuntu/Chatty-Server
+  
+      2. Use `grep` to search through `server.log`.
+  
+      3. Find the complete temporary flag.
+  
+         It will look like:
+  
+         FLAG{...}
+  
+      4. Once you have found the temporary flag, run:
+  
+         /challenge/verify
+  
+      5. Enter the complete temporary flag, including `FLAG{...}`.
+  
+      6. The verifier will give you your final `pwn.college{...}` flag.
+  
+      7. Submit the final flag on the challenge page.
+  
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
+  
+  
+  - id: social-media-password
+    name: "Social Media Password"
+    description: |
+      You are investigating a fake social media profile belonging to
+      `@random_dude12`.
+  
+      The profile contains three posts with information about the person.
+      Use clues from the posts to work out a possible password.
+  
+      1. Start the challenge by running:
+  
+         /challenge/run
+  
+         This starts the website. Leave this Terminal running while you
+         complete the challenge.
+  
+      2. Open the Desktop and launch Firefox.
+  
+      3. Go to:
+  
+         http://127.0.0.1:5000
+  
+      4. Read the three posts and look for information that could be used
+         to create a password.
+  
+      5. When you think you have the password, open a second Terminal in
+         the Desktop.
+  
+      6. In the second Terminal, run:
+  
+         /challenge/verify
+  
+      7. Enter your password when prompted.
+  
+      8. If it is correct, the verifier will give you your final
+         `pwn.college{...}` flag.
+  
+      9. Submit the final flag on the challenge page.
+  
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
+  
+  
+  - id: locked-treasure-chest
+    name: "Locked Treasure Chest"
+    description: |
+      You have found a digital treasure chest containing another ZIP file.
+  
+      The flag is hidden in information about the ZIP file rather than
+      inside a normal file.
+  
+      1. Go to the challenge folder:
+  
+         cd /challenge
+  
+      2. Extract `digital_treasure.zip` into your home folder.
+  
+         If you need a reminder of the `unzip` syntax, use its `--help`
+         option.
+  
+      3. Find the new file called `treasure.zip`.
+  
+         Do NOT unzip `treasure.zip`.
+  
+      4. Use `zipinfo` to investigate the information stored about
+         `treasure.zip`.
+  
+         If you need a reminder of how to use `zipinfo`, try its
+         `--help` option.
+  
+      5. Look through the information for the temporary flag beginning
+         with `FLAG{...}`.
+  
+      6. Once you have found the complete temporary flag, run:
+  
+         /challenge/verify
+  
+      7. Enter the complete temporary flag, including `FLAG{...}`.
+  
+      8. The verifier will give you your final `pwn.college{...}` flag.
+  
+      9. Submit the final flag on the challenge page.
+  
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
+  
+  
+  - id: secret-message-in-photo
+    name: "Secret Message in Photo"
+    description: |
+      You have found a suspicious image containing a hidden message.
+  
+      The flag is hidden inside information extracted from the image.
+  
+      1. Go to the challenge folder:
+  
+         cd /challenge
+  
+      2. Look at the files provided and identify the image and any other
+         files that may contain useful information.
+  
+      3. Use `steghide` to investigate the image.
+  
+         The image contains information that cannot be seen normally.
+         Your goal is to find and extract the hidden information, then
+         investigate what you have extracted.
+  
+         If you need help with the command, use:
+  
+         steghide --help
+  
+      4. Find the temporary flag.
+  
+         It will look like:
+  
+         FLAG{...}
+  
+      5. Once you have found the temporary flag, run:
+  
+         /challenge/verify
+  
+      6. Enter the complete temporary flag, including `FLAG{...}`.
+  
+      7. The verifier will give you your final `pwn.college{...}` flag.
+  
+      8. Submit the final flag on the challenge page.
+  
+      If you get stuck, ask a volunteer or use SENSAI for a hint.
 
   - id: medium
     name: "🟠 Medium"
