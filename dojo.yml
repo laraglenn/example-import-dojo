@@ -403,7 +403,8 @@ modules:
           information that visitors normally do not see.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
-    - id: easy
+    
+  - id: easy
     name: "🔵 Easy"
     description: |
       These challenges are still approachable for beginners, but require
