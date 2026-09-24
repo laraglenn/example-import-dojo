@@ -1,5 +1,5 @@
 id: leeds-compsoc-ctf-2026
-name: Leeds CompSoc CTF Test
+name: Leeds CompSoc CTF TEST
 type: hidden
 password: LUCS26-CTF-SETUP
 
@@ -21,31 +21,37 @@ modules:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: grep-master
+        name: "Grep Master [Easy]"
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: unlock-the-vault
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: locked-treasure-chest
+        name: "Unlock the Vault [Easy]"
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: the-artists-clue
+        name: "The Artist's Clue [Easy]"
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: forensics
+          challenge: locked-treasure-chest
+        name: "Locked Treasure Chest [Easy-Medium]"
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: secret-message-in-photo
+        name: "Secret Message in Photo [Medium]"
 
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: hidden-treasures-in-the-picture
+        name: "Hidden Treasures in the Picture [Hard]"
 
 
   - id: web
@@ -62,16 +68,25 @@ modules:
           dojo: cyber-security~59368da7
           module: web
           challenge: pale-red-horse-squad
+        name: "Pale Red Horse Squad [Easy]"
 
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: am-i-admin
+        name: "Am I Admin? [Easy-Medium]"
 
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: am-i-admin-2
+        name: "Am I Admin 2? [Medium]"
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: web
+          challenge: creepy-crawly
+        name: "Creepy Crawly [Hard]"
 
 
   - id: programs
@@ -79,8 +94,9 @@ modules:
     description: |
       Investigate programs and work out how they behave.
 
-      For the Reverse Password Plaintext challenge, select VSCode Workspace
-      from the challenge menu and use it inside the pwn.college Desktop.
+      For the Reverse Password Plaintext and Reverse Cipher Password
+      challenges, select VSCode Workspace from the challenge menu and
+      use it inside the pwn.college Desktop.
 
     challenges:
 
@@ -88,16 +104,25 @@ modules:
           dojo: cyber-security~59368da7
           module: pwn
           challenge: buffer-overflow
+        name: "Buffer Overflow [Easy-Medium]"
 
       - import:
           dojo: cyber-security~59368da7
           module: pwn
           challenge: magic-number
+        name: "Magic Number [Medium]"
 
       - import:
           dojo: cyber-security~59368da7
           module: pwn
           challenge: reverse-password-plaintext
+        name: "Reverse Password Plaintext [Medium]"
+
+      - import:
+          dojo: cyber-security~59368da7
+          module: pwn
+          challenge: reverse-password-cipher
+        name: "Reverse Cipher Password [Hard]"
 
 
   - id: osint
@@ -114,3 +139,4 @@ modules:
           dojo: cyber-security~59368da7
           module: osint
           challenge: socialmediapassword
+        name: "Social Media Password [Easy]"
