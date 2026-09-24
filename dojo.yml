@@ -433,20 +433,17 @@ modules:
           There are also fake flags, so you will need to work out which
           information is relevant.
 
-          Start by going to:
+          To start:
 
              cd /home/ubuntu/Chatty-Server
 
-          Use commands such as `grep` to search the log and narrow down
-          the information you need.
-
-          If you have not used grep before, look at the Grep Master challenge
-          in the Beginner module for an example of the basic syntax.
+          Use grep to search server.log and narrow down the information you
+          need.
 
           Find the three pieces of the flag and work out how they fit together
           to form the complete FLAG{...}.
 
-          When you have the complete temporary flag, run:
+          When you find the complete temporary flag, run:
 
              /challenge/verify
 
@@ -477,67 +474,34 @@ modules:
 
           To start:
 
-          1. Press Start.
-
-             This opens the challenge and a Terminal.
-
-          2. Run:
-
              /challenge/run
 
-             Leave this Terminal running while you use the website.
+          Leave the Terminal running while you use the website.
 
-          3. At the bottom of the Terminal, find the Desktop button next to
-             the Code button.
-
-             Click Desktop to open the pwn.college virtual Desktop in a
-             new browser tab.
-
-          4. Open Firefox inside the virtual Desktop.
-
-             Firefox is a web browser, like Chrome or Edge.
-
-          5. In Firefox, enter:
+          Open Firefox inside the pwn.college Desktop and visit:
 
              http://127.0.0.1:5000
 
-             You can type this into the address bar or copy and paste it.
+          Read the three posts carefully and look for information that could
+          be used to construct a password.
 
-          6. Read the three posts carefully and look for information that
-             could be used to construct a password.
-
-          7. When you have a possible password, return to the Terminal
-             running the challenge and run:
+          When you have a possible password, open another Terminal and run:
 
              /challenge/verify
 
-          8. Enter your password.
+          Enter your password.
 
-          9. If it is accepted, the verifier will give you your final
-             pwn.college{...} flag.
-
-          10. Submit that flag on the challenge page.
-
-          Important:
-
-          You need two things running at the same time: the local website
-          and a Terminal where you can run commands.
-
-          If the Terminal is currently displaying the web server output,
-          open another Terminal from the pwn.college Desktop to run
-          `/challenge/verify`.
-
-          127.0.0.1 refers to the challenge computer. This is why the website
-          must be opened in Firefox inside the pwn.college Desktop rather
-          than your normal browser.
-
-          Everything in this challenge is fictional and runs locally.
+          If it is accepted, the verifier will give you your final
+          pwn.college{...} flag.
 
           Stuck?
 
           The password should contain information taken from the different
           posts. Think about what details someone might choose when creating
           an easy-to-remember password.
+
+          If the Terminal is currently displaying the web server output,
+          use another Terminal to run /challenge/verify.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
@@ -553,7 +517,7 @@ modules:
           The flag is hidden in information about the ZIP file rather than
           inside a normal file.
 
-          Start by going to:
+          To start:
 
              cd /challenge
 
@@ -563,11 +527,14 @@ modules:
           ZIP file.
 
           Instead, investigate the information stored about the ZIP file.
-          The command `zipinfo` can help you inspect ZIP files.
+          The command zipinfo can help you inspect ZIP files.
 
           If you are unsure how to use zipinfo, try:
 
              zipinfo -h
+
+          Use the help information to work out which option will show the
+          information you need.
 
           Look through the information you find for the temporary FLAG{...}.
 
@@ -602,13 +569,13 @@ modules:
           secret.txt you can find the passphrase needed to extract the
           hidden information.
 
-          Start by going to:
+          To start:
 
              cd /home/ubuntu/Secret-Message-in-Photo
 
           Find the passphrase in secret.txt.
 
-          You will then need to use `steghide` to extract the hidden
+          You will then need to use steghide to extract the hidden
           information from the photograph.
 
           If you are unsure how steghide works, try:
@@ -636,9 +603,9 @@ modules:
 
           Stuck?
 
-          Before you can extract anything, you need to know the passphrase
-          and the image containing the hidden information. Think about what
-          the different steghide options are asking you to provide.
+          You need the passphrase, the correct image and the correct
+          steghide options. Use the help output to work out how those pieces
+          fit together.
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
@@ -659,7 +626,7 @@ modules:
           You do not need to understand advanced exploitation to solve this
           challenge.
 
-          Start by running:
+          To start:
 
              /challenge/buffer_overflow
 
