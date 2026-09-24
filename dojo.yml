@@ -404,308 +404,420 @@ modules:
 
           If you are still stuck, ask a volunteer for a hint or use SENSAI.
   - id: easy
-    name: "🔵 Easy"
+  name: "🔵 Easy"
+  description: |
+  These challenges are still approachable for beginners, but require
+  you to work out a little more for yourself.
+
+  
+  You may need to combine commands, investigate information more carefully,
+  or use a tool's help options to work out the exact syntax.
+
+  If you get stuck, try to identify what you know and what you still need
+  to work out before asking for help. You can ask a volunteer for a hint
+  or use SENSAI through the Help option on pwn.college.
+  
+
+  challenges:
+
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: chatty-server
+    name: "Chatty Server"
     description: |
-      These challenges are still approachable for beginners, but require
-      you to work out a little more for yourself.
+      You are investigating a server log called server.log.
 
-    challenges:
+      The log contains lots of activity from different users. Somewhere
+      in the log, a user has left behind three pieces of a temporary flag.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: chatty-server
-        name: "Chatty Server"
-        description: |
-          You are investigating a server log called server.log.
+      There are also fake flags, so you will need to work out which
+      information is relevant.
 
-          The log contains lots of activity from different users. Somewhere
-          in the log, a user has left behind three pieces of a temporary flag.
+      Start by going to:
 
-          There are also fake flags, so you need to work out which information
-          is relevant.
+         cd /home/ubuntu/Chatty-Server
 
-          Start by going to:
+      Use commands such as `grep` to search the log and narrow down
+      the information you need.
 
-          cd /home/ubuntu/Chatty-Server
+      If you have not used grep before, look at the Grep Master challenge
+      in the Beginner module for an example of the basic syntax.
 
-          Look through server.log and use grep to make the search easier.
+      Find the three pieces of the flag and work out how they fit together
+      to form the complete FLAG{...}.
 
-          Find all three parts of the flag and put them together.
+      When you have the complete temporary flag, run:
 
-          When you have the complete FLAG{...}, run:
+         /challenge/verify
 
-          /challenge/verify
+      Enter the complete temporary flag, including FLAG{}, to receive
+      your final pwn.college{...} flag.
 
-          Enter the temporary flag to receive your final pwn.college{...} flag.
+      Stuck?
 
+      Not every line containing FLAG is part of the real flag. Think about
+      what the three real pieces have in common.
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: osint
-          challenge: socialmediapassword
-        name: "Social Media Password"
-        description: |
-          You have been given a fake social media profile belonging to
-          @random_dude12.
-
-          The profile contains three posts with information about the person.
-
-          Your job is to look at the information they have shared and work
-          out a possible password using clues from their posts.
-
-          To start:
-
-          1. Open the Terminal.
-          2. Run:
-
-             /challenge/run
-
-          3. Open the pwn.college Desktop.
-          4. Open Firefox.
-          5. Visit:
-
-             http://127.0.0.1:5000
-
-          6. Read the three posts carefully.
-          7. Use information from the posts to construct a possible password.
-          8. Run:
-
-             /challenge/verify
-
-          9. Enter your password.
-          10. If it is accepted, you will receive your pwn.college{...} flag.
-          11. Submit that flag on the challenge page.
-
-          Everything in this challenge is fictional and runs locally inside
-          the challenge.
+      If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: locked-treasure-chest
-        name: "Locked Treasure Chest"
-        description: |
-          You have found a digital treasure chest containing another ZIP file.
+  - import:
+      dojo: cyber-security~59368da7
+      module: osint
+      challenge: socialmediapassword
+    name: "Social Media Password"
+    description: |
+      You have been given a fictional social media profile belonging to
+      @random_dude12.
 
-          The flag is hidden in information about the ZIP file rather than
-          inside a normal file.
+      The profile contains three posts with information about the person.
 
-          Start by extracting digital_treasure.zip into your home folder.
+      Your job is to use information from all three posts to work out
+      a possible password.
 
-          You will then find treasure.zip.
+      To start:
 
-          Do not extract treasure.zip.
+      1. Press Start.
 
-          Instead, investigate the information stored about the ZIP file.
-          The command zipinfo can help you do this.
+         This opens the challenge and a Terminal.
 
-          Look through the information you find for the temporary FLAG{...}.
+      2. Run:
 
-          Once you have it, run:
+         /challenge/run
 
-          /challenge/verify
+         Leave this Terminal running while you use the website.
 
-          Enter the temporary flag to receive your final pwn.college{...} flag.
+      3. At the bottom of the Terminal, find the Desktop button next to
+         the Code button.
+
+         Click Desktop to open the pwn.college virtual Desktop in a
+         new browser tab.
+
+      4. Open Firefox inside the virtual Desktop.
+
+         Firefox is a web browser, like Chrome or Edge.
+
+      5. In Firefox, enter:
+
+         http://127.0.0.1:5000
+
+         You can type this into the address bar or copy and paste it.
+
+      6. Read the three posts carefully and look for information that
+         could be used to construct a password.
+
+      7. When you have a possible password, return to the Terminal
+         running the challenge and run:
+
+         /challenge/verify
+
+      8. Enter your password.
+
+      9. If it is accepted, the verifier will give you your final
+         pwn.college{...} flag.
+
+      10. Submit that flag on the challenge page.
+
+      Important:
+
+      You need two things running at the same time: the local website
+      and a Terminal where you can run commands.
+
+      If the Terminal is currently displaying the web server output,
+      open another Terminal from the pwn.college Desktop to run
+      `/challenge/verify`.
+
+      127.0.0.1 refers to the challenge computer. This is why the website
+      must be opened in Firefox inside the pwn.college Desktop rather
+      than your normal browser.
+
+      Everything in this challenge is fictional and runs locally.
+
+      Stuck?
+
+      The password should contain information taken from the different
+      posts. Think about what details someone might choose when creating
+      an easy-to-remember password.
+
+      If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: secret-message-in-photo
-        name: "Secret Message in Photo"
-        description: |
-          A photograph called suspicious_doggo.jpg contains hidden information.
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: locked-treasure-chest
+    name: "Locked Treasure Chest"
+    description: |
+      You have found a digital treasure chest containing another ZIP file.
 
-          This is an example of steganography, where information is hidden
-          inside another file.
+      The flag is hidden in information about the ZIP file rather than
+      inside a normal file.
 
-          The photograph is protected by a passphrase.
+      Start by going to:
 
-          Somewhere in secret.txt you can find the passphrase needed to
-          extract the hidden information.
+         cd /challenge
 
-          Start by going to:
+      Extract digital_treasure.zip into your home folder.
 
-          cd /home/ubuntu/Secret-Message-in-Photo
+      You will find another ZIP file inside. Do not extract this second
+      ZIP file.
 
-          Find the passphrase in secret.txt.
+      Instead, investigate the information stored about the ZIP file.
+      The command `zipinfo` can help you inspect ZIP files.
 
-          You will then need to use the steghide command to extract the
-          hidden information from the photograph.
+      If you are unsure how to use zipinfo, try:
 
-          Save the extracted information somewhere in your home folder,
-          then read it to find the temporary FLAG{...}.
+         zipinfo -h
 
-          When you have the temporary flag, run:
+      Look through the information you find for the temporary FLAG{...}.
 
-          /challenge/verify
+      When you find the complete temporary flag, run:
 
-          Enter it to receive your final pwn.college{...} flag.
+         /challenge/verify
+
+      Enter the complete temporary flag, including FLAG{}, to receive
+      your final pwn.college{...} flag.
+
+      Stuck?
+
+      Think about where the second ZIP file was extracted and what
+      information a ZIP file can contain besides the files themselves.
+
+      If you are still stuck, ask a volunteer for a hint or use SENSAI.
 
 
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: buffer-overflow
-        name: "Buffer Overflow"
-        description: |
-          This challenge introduces the idea of a buffer overflow using a
-          deliberately simplified program.
+  - import:
+      dojo: cyber-security~59368da7
+      module: forensics
+      challenge: secret-message-in-photo
+    name: "Secret Message in Photo"
+    description: |
+      A photograph called suspicious_doggo.jpg contains hidden
+      information.
 
-          The program expects you to enter some text. If you enter the right
-          amount of text, the program will trigger the challenge's overflow
-          condition.
+      This is an example of steganography, where information is hidden
+      inside another file.
 
-          You do not need to understand advanced exploitation to solve this.
+      The photograph is protected by a passphrase. Somewhere in
+      secret.txt you can find the passphrase needed to extract the
+      hidden information.
 
-          Start by running:
+      Start by going to:
 
-          /challenge/buffer_overflow
+         cd /home/ubuntu/Secret-Message-in-Photo
 
-          Try different input lengths until the program gives you its
-          successful output.
+      Find the passphrase in secret.txt.
 
-          Then run:
+      You will then need to use `steghide` to extract the hidden
+      information from the photograph.
 
-          /challenge/verify
+      If you are unsure how steghide works, try:
 
-          Enter the successful output to receive your pwn.college{...} flag.
+         steghide --help
 
+      Look through the available options for the ones that allow you to:
+
+      - extract hidden information
+      - provide the passphrase
+      - specify the image containing the hidden information
+      - choose where the extracted information is saved
+
+      Save the extracted information as a file in your home folder so
+      you can read it afterwards.
+
+      Read the extracted file to find the temporary FLAG{...}.
+
+      When you find the complete temporary flag, run:
+
+         /challenge/verify
+
+      Enter the complete temporary flag, including FLAG{}, to receive
+      your final pwn.college{...} flag.
+
+      Stuck?
+
+      Before you can extract anything, you need to know the passphrase
+      and the image containing the hidden information. Think about what
+      the different steghide options are asking you to provide.
+
+      If you are still stuck, ask a volunteer for a hint or use SENSAI.
+
+
+  - import:
+      dojo: cyber-security~59368da7
+      module: pwn
+      challenge: buffer-overflow
+    name: "Buffer Overflow"
+    description: |
+      This challenge introduces the idea of a buffer overflow using a
+      deliberately simplified program.
+
+      A program has a limited amount of space available for the text you
+      enter. What happens when you give it more input than it was designed
+      to handle?
+
+      You do not need to understand advanced exploitation to solve this
+      challenge.
+
+      Start by running:
+
+         /challenge/buffer_overflow
+
+      The program will ask you for some input.
+
+      Experiment with different input lengths and pay attention to what
+      the program does. You are looking for the successful output produced
+      when the challenge's overflow condition is triggered.
+
+      Once you have found the successful output, run:
+
+         /challenge/verify
+
+      Enter the complete output when prompted. If it is correct, you will
+      receive your final pwn.college{...} flag.
+
+      Stuck?
+
+      The challenge is deliberately simplified: you are not being asked
+      to perform a real-world exploit. Focus on what changes when you
+      increase the amount of input you give the program.
+
+      If you are still stuck, ask a volunteer for a hint or use SENSAI.
+  
 
   - id: medium
-    name: "🟠 Medium"
-    description: |
-      These challenges require you to combine ideas, investigate more
-      carefully or understand a security concept.
-
-    challenges:
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: am-i-admin
-        name: "Am I Admin?"
-        description: |
-          This website uses a browser cookie to decide whether you are an
-          administrator.
-
-          Your job is to understand how the website is making that decision
-          and see whether you can change the information stored in your browser.
-
-          Start the web application with:
-
-          /challenge/app.py
-
-          Then open Firefox inside the pwn.college Desktop and visit:
-
-          http://127.0.0.1:5000
-
-          Investigate the cookies used by the website and see what happens
-          when their values change.
-
-          If you can make the website treat you as an administrator, the
-          admin page will show you the flag.
-
-          Submit the pwn.college{...} flag shown by the website.
-
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: pwn
-          challenge: magic-number
-        name: "Magic Number"
-        description: |
-          A program is hiding a secret number.
-
-          Each time the program runs, it chooses one number from a small set
-          of possible values.
-
-          Your job is to inspect the program and work out what those possible
-          numbers are.
-
-          One useful command is:
-
-          strings
-
-          Start by investigating:
-
-          /challenge/magic_numbers
-
-          Then run the program and try the values you have found.
-
-          When you guess correctly, the program will give you a special
-          output string.
-
-          Give that string to:
-
-          /challenge/verify
-
-          to receive your pwn.college{...} flag.
-
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: forensics
-          challenge: hidden-treasures-in-the-picture
-        name: "Hidden Treasures in the Picture"
-        description: |
-          A mysterious image contains four separate pieces of a flag.
-
-          The pieces have been hidden using several different techniques.
-
-          Your job is to investigate the image and find all four pieces.
-
-          You may find tools such as these useful:
-
-          strings
-          grep
-          exiftool
-          steghide
-          binwalk
-
-          Keep track of each part as you find it.
-
-          Once you have all four pieces, put them together to make the
-          complete temporary FLAG{...}.
-
-          Run:
-
-          /challenge/verify
-
-          Enter the complete temporary flag to receive your final
-          pwn.college{...} flag.
-
-
-      - import:
-          dojo: cyber-security~59368da7
-          module: web
-          challenge: am-i-admin-2
-        name: "Am I Admin 2?"
-        description: |
-          This is a harder version of Am I Admin?
-
-          The website still uses a browser cookie to decide whether you are
-          an administrator, but the previous approach no longer works.
-
-          This time you also have access to the Python code behind the website.
-
-          Start the application with:
-
-          /challenge/app.py
-
-          Open Firefox inside the pwn.college Desktop and visit:
-
-          http://127.0.0.1:5000
-
-          Investigate the cookie and then look at the Python code in /challenge.
-
-          Work out how the website checks the cookie and what value it expects.
-
-          If you can make the website treat you as an administrator, it will
-          show you the pwn.college{...} flag.
-
+      name: "🟠 Medium"
+      description: |
+        These challenges require you to combine ideas, investigate more
+        carefully or understand a security concept.
+  
+      challenges:
+  
+        - import:
+            dojo: cyber-security~59368da7
+            module: web
+            challenge: am-i-admin
+          name: "Am I Admin?"
+          description: |
+            This website uses a browser cookie to decide whether you are an
+            administrator.
+  
+            Your job is to understand how the website is making that decision
+            and see whether you can change the information stored in your browser.
+  
+            Start the web application with:
+  
+            /challenge/app.py
+  
+            Then open Firefox inside the pwn.college Desktop and visit:
+  
+            http://127.0.0.1:5000
+  
+            Investigate the cookies used by the website and see what happens
+            when their values change.
+  
+            If you can make the website treat you as an administrator, the
+            admin page will show you the flag.
+  
+            Submit the pwn.college{...} flag shown by the website.
+  
+  
+        - import:
+            dojo: cyber-security~59368da7
+            module: pwn
+            challenge: magic-number
+          name: "Magic Number"
+          description: |
+            A program is hiding a secret number.
+  
+            Each time the program runs, it chooses one number from a small set
+            of possible values.
+  
+            Your job is to inspect the program and work out what those possible
+            numbers are.
+  
+            One useful command is:
+  
+            strings
+  
+            Start by investigating:
+  
+            /challenge/magic_numbers
+  
+            Then run the program and try the values you have found.
+  
+            When you guess correctly, the program will give you a special
+            output string.
+  
+            Give that string to:
+  
+            /challenge/verify
+  
+            to receive your pwn.college{...} flag.
+  
+  
+        - import:
+            dojo: cyber-security~59368da7
+            module: forensics
+            challenge: hidden-treasures-in-the-picture
+          name: "Hidden Treasures in the Picture"
+          description: |
+            A mysterious image contains four separate pieces of a flag.
+  
+            The pieces have been hidden using several different techniques.
+  
+            Your job is to investigate the image and find all four pieces.
+  
+            You may find tools such as these useful:
+  
+            strings
+            grep
+            exiftool
+            steghide
+            binwalk
+  
+            Keep track of each part as you find it.
+  
+            Once you have all four pieces, put them together to make the
+            complete temporary FLAG{...}.
+  
+            Run:
+  
+            /challenge/verify
+  
+            Enter the complete temporary flag to receive your final
+            pwn.college{...} flag.
+  
+  
+        - import:
+            dojo: cyber-security~59368da7
+            module: web
+            challenge: am-i-admin-2
+          name: "Am I Admin 2?"
+          description: |
+            This is a harder version of Am I Admin?
+  
+            The website still uses a browser cookie to decide whether you are
+            an administrator, but the previous approach no longer works.
+  
+            This time you also have access to the Python code behind the website.
+  
+            Start the application with:
+  
+            /challenge/app.py
+  
+            Open Firefox inside the pwn.college Desktop and visit:
+  
+            http://127.0.0.1:5000
+  
+            Investigate the cookie and then look at the Python code in /challenge.
+  
+            Work out how the website checks the cookie and what value it expects.
+  
+            If you can make the website treat you as an administrator, it will
+            show you the pwn.college{...} flag.
+  
 
   - id: hard
     name: "🔴 Hard"
