@@ -394,6 +394,30 @@ modules:
       The instructions provide enough information to get started, but you may
       need to work out the exact commands or approach yourself.
 
+      If you need to move text between the pwn.college virtual computer and
+      your normal browser:
+
+      1. On the left-hand side of the pwn.college virtual computer, look for
+         the grey arrow.
+
+      2. Click the grey arrow to open the side panel.
+
+      3. Click the Clipboard icon.
+
+      4. Paste your text into the Clipboard panel.
+
+      5. You can then copy the text from the Clipboard panel and paste it
+         into Firefox inside the pwn.college Desktop.
+
+      6. You can also use the Clipboard panel to move text in the other
+         direction, from the virtual computer back to your normal browser.
+
+      Important:
+
+      The Clipboard panel is part of the pwn.college virtual computer.
+      Do not try to paste directly between your normal browser and Firefox
+      inside the virtual computer.
+
       If you get stuck, ask a volunteer or use SENSAI for a hint.
 
     challenges:
@@ -407,7 +431,7 @@ modules:
           You are investigating a server log called `server.log`.
 
           The log contains activity from lots of different users. Somewhere in
-          the log, a temporary flag has been hidden.
+          the log, three separate pieces of a temporary flag have been hidden.
 
           There are also fake flags and unrelated activity in the log, so you
           will need to work out which information is relevant.
@@ -418,21 +442,24 @@ modules:
 
           2. Use `grep` to search through `server.log`.
 
-          3. Find the complete temporary flag.
+          3. Find all three pieces of the temporary flag.
 
-             It will look like:
+             Each piece will look like part of:
 
              FLAG{...}
 
-          4. Once you have found the temporary flag, run:
+          4. Work out the correct order of the three pieces and combine them
+             to make the complete temporary flag.
+
+          5. Once you have the complete temporary flag, run:
 
              /challenge/verify
 
-          5. Enter the complete temporary flag, including `FLAG{...}`.
+          6. Enter the complete temporary flag when prompted.
 
-          6. The verifier will give you your final `pwn.college{...}` flag.
+          7. The verifier will give you your final `pwn.college{...}` flag.
 
-          7. Submit the final flag on the challenge page.
+          8. Submit that final flag on the challenge page.
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
 
@@ -569,7 +596,6 @@ modules:
           8. Submit the final flag on the challenge page.
 
           If you get stuck, ask a volunteer or use SENSAI for a hint.
-
   - id: medium
     name: "🟠 Medium"
     description: |
