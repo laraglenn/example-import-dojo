@@ -833,18 +833,10 @@ modules:
           Enter it to receive your pwn.college{...} flag.
 
       # ── Terrible Token ──────────────────────────────────────
-      # NOTE: The challenge ID below (level-1-2) is based on
-      # pwn.college's URL pattern. If the import fails, try:
-      #   terrible-token-hard
-      #   terrible-token
-      #   level-2
-      # You can also find the correct ID by visiting the challenge
-      # on pwn.college and checking the URL slug after
-      # /reverse-engineering/
       - import:
-          dojo: program-security
+          dojo: cyber-security~59368da7
           module: reverse-engineering
-          challenge: level-1-2
+          challenge: terrible-token-hard
         name: "Terrible Token"
         description: |
           *Reverse engineer a compiled program to find the correct
@@ -872,14 +864,10 @@ modules:
           receive your pwn.college{...} flag.
 
       # ── Tangled Ticket ───────────────────────────────────────
-      # NOTE: Same as above — if level-2-2 fails, try:
-      #   tangled-ticket-hard
-      #   tangled-ticket
-      #   level-4
       - import:
-          dojo: program-security
+          dojo: cyber-security~59368da7
           module: reverse-engineering
-          challenge: level-2-2
+          challenge: tangled-ticket-hard
         name: "Tangled Ticket"
         description: |
           *Reverse engineer a program that transforms your input
