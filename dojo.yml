@@ -834,7 +834,7 @@ modules:
 
       # ── Terrible Token ──────────────────────────────────────
       - import:
-          dojo: cyber-security~59368da7
+          dojo: cse466-f2025
           module: reverse-engineering
           challenge: terrible-token-hard
         name: "Terrible Token"
@@ -865,7 +865,7 @@ modules:
 
       # ── Tangled Ticket ───────────────────────────────────────
       - import:
-          dojo: cyber-security~59368da7
+          dojo: cse466-f2025
           module: reverse-engineering
           challenge: tangled-ticket-hard
         name: "Tangled Ticket"
