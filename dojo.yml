@@ -882,9 +882,29 @@ modules:
           module: reverse-engineering
           challenge: terrible-token-hard
         name: "Terrible Token"
+        description: |
+          Reverse engineer this challenge to find the correct license
+          key.
+
+          The program is at /challenge/terrible-token-hard. Run it,
+          type a key and press Enter. The correct key prints your
+          pwn.college{...} flag.
+
+          Stuck? Use SENSAI through the Help link at the top of the page.
+
       # ── Tangled Ticket ───────────────────────────────────────
       - import:
           dojo: cse466-f2025
           module: reverse-engineering
           challenge: tangled-ticket-hard
         name: "Tangled Ticket"
+        description: |
+          Reverse engineer this challenge to find the correct license
+          key, but your input will be modified somehow before being
+          compared to the correct key.
+
+          The program is at /challenge/tangled-ticket-hard. Run it,
+          type a key and press Enter. The correct key prints your
+          pwn.college{...} flag.
+
+          Stuck? Use SENSAI through the Help link at the top of the page.
