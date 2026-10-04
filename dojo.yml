@@ -829,24 +829,7 @@ modules:
 
           Stuck? Use SENSAI through the Help link at the top of the page.
 
-  # ──────────────────────────────────────────────────────────────
-  #  HARD
-  # ──────────────────────────────────────────────────────────────
-
-  - id: hard
-    name: "🔴 Hard"
-    description: |
-      These challenges are intended for participants who already have
-      some programming or cybersecurity experience.
-
-      Each challenge tells you what the goal is, but not how to reach
-      it. Read the code. Experiment. Break things.
-
-      If you get stuck, use SENSAI through the Help link on pwn.college.
-
-    challenges:
-
-      # ── Reverse Plaintext Password ───────────────────────────
+      # ── Reverse Plaintext Password (moved from Hard) ─────────
       - import:
           dojo: cyber-security~59368da7
           module: pwn
@@ -880,6 +863,27 @@ modules:
 
           Stuck? Use SENSAI through the Help link at the top of the page.
 
+  # ──────────────────────────────────────────────────────────────
+  #  HARD
+  # ──────────────────────────────────────────────────────────────
+
+  - id: hard
+    name: "🔴 Hard"
+    description: |
+      These challenges are intended for participants who already have
+      some programming or cybersecurity experience.
+
+      Each challenge tells you what the goal is, but not how to reach
+      it. The first two are reverse engineering. The last three are
+      binary exploitation and get harder in order. The final one is
+      the toughest challenge in the competition.
+
+      Read the code. Experiment. Break things.
+
+      If you get stuck, use SENSAI through the Help link on pwn.college.
+
+    challenges:
+
       # ── Terrible Token ──────────────────────────────────────
       - import:
           dojo: cse466-f2025
@@ -910,5 +914,97 @@ modules:
           The program is at /challenge/tangled-ticket-hard. Run it,
           type a key and press Enter. The correct key prints your
           pwn.college{...} flag.
+
+          Stuck? Use SENSAI through the Help link at the top of the page.
+
+      # ── Tricky Control Hijack ────────────────────────────────
+      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
+      # dojo, which lists it as "Control Hijack 2". If the import
+      # fails, try control-hijack-2-hard. Check the program path with
+      # ls -l /challenge and update the description to match.
+      - import:
+          dojo: intro-to-cybersecurity
+          module: binary-exploitation
+          challenge: control-hijack-2
+        name: "Tricky Control Hijack"
+        description: |
+          *Overflow a buffer to take control of where the program goes
+          next.*
+
+          This program has a buffer overflow. Somewhere inside it is
+          code that prints the flag, but the program never runs it on
+          its own.
+
+          Goal: overflow the buffer to hijack the program's control
+          flow and make it run the code that prints the flag.
+
+          Press Start, then find the program with:
+
+          ls -l /challenge
+
+          You do not get the source code. You will need to reverse
+          engineer the program to work out how much to overflow and
+          where to send it.
+
+          Stuck? Use SENSAI through the Help link at the top of the page.
+
+      # ── PIEs ─────────────────────────────────────────────────
+      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
+      # dojo ("Pie Overflow"). If the import fails, try
+      # pie-overflow-hard. Check the program path before the event.
+      - import:
+          dojo: intro-to-cybersecurity
+          module: binary-exploitation
+          challenge: pie-overflow
+        name: "PIEs"
+        description: |
+          *Hijack control flow in a program whose addresses change every
+          time it runs.*
+
+          Overflow a buffer and smash the stack to obtain the flag, but
+          this time the program is a Position Independent Executable
+          (PIE). It is loaded at a different address every time it
+          runs, so you cannot simply jump to a fixed address.
+
+          Goal: find a way to reach the code that prints the flag even
+          though you do not know exactly where it will be.
+
+          Press Start, then find the program with:
+
+          ls -l /challenge
+
+          You do not get the source code. Think about which parts of an
+          address change between runs and which parts stay the same.
+
+          Stuck? Use SENSAI through the Help link at the top of the page.
+
+      # ── Hijack to Shellcode ──────────────────────────────────
+      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
+      # dojo ("Hijack To Shellcode"). If the import fails, try
+      # hijack-to-shellcode-hard. Check the program path before the
+      # event.
+      - import:
+          dojo: intro-to-cybersecurity
+          module: binary-exploitation
+          challenge: hijack-to-shellcode
+        name: "Hijack to Shellcode"
+        description: |
+          *The final challenge: inject your own code and make the
+          program run it.*
+
+          This time there is no helpful code inside the program that
+          prints the flag. You will have to write it yourself.
+
+          Goal: write shellcode (machine code) that reads the flag,
+          inject it into the program, and use a buffer overflow to make
+          the program run it.
+
+          Press Start, then find the program with:
+
+          ls -l /challenge
+
+          You do not get the source code. This combines everything:
+          reverse engineering, overflows, controlling execution and
+          writing shellcode.
 
           Stuck? Use SENSAI through the Help link at the top of the page.
