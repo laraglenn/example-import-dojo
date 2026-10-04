@@ -77,308 +77,24 @@ modules:
           module: forensics
           challenge: grep-master
         name: "Grep Master"
-        description: |
-          *Search a file for hidden text using grep.*
-
-          You are looking for a hidden flag inside a very large text file
-          called haystack.txt.
-
-          You do not need to read the whole file yourself. Linux has a
-          command called grep which can search a file for text.
-
-          To start:
-
-          1. Press Start.
-
-             This opens the challenge and a Terminal. The Terminal is where
-             you type instructions for the computer.
-
-          2. Go to the challenge folder:
-
-             cd /challenge
-
-             `cd` means change directory. It moves you into a different
-             folder.
-
-          3. Type:
-
-             ls
-
-             This lists the files in the folder.
-
-          4. Find haystack.txt.
-
-             Remember that haystack.txt is a file, not a folder, so you
-             do not need to use cd on it.
-
-          5. Use grep to search haystack.txt for the hidden flag.
-
-             The basic format is:
-
-             grep "something to search for" filename
-
-             The temporary flag will begin with:
-
-             FLAG{
-
-          6. When you find the complete temporary flag, run:
-
-             /challenge/verify
-
-             When the verifier asks for the flag, enter the complete
-             temporary flag, including FLAG{}.
-
-             For example, if the flag you found was:
-
-             FLAG{something_here}
-
-             you would enter the whole flag, including FLAG{ and }.
-
-          7. If it is correct, the verifier will give you your final
-             pwn.college{...} flag.
-
-          8. Submit that final flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Unlock the Vault ─────────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: unlock-the-vault
         name: "Unlock the Vault"
-        description: |
-          *Find a password hidden in a clue file and use it to open a
-          locked ZIP.*
-
-          You are a treasure hunter and have found a locked ZIP file.
-
-          The challenge contains:
-
-          vault.zip
-          vault_clue.txt
-
-          The password for vault.zip is hidden somewhere in vault_clue.txt.
-
-          Your job is to find the password, open the ZIP file and find
-          the flag inside.
-
-          To start:
-
-          1. Press Start.
-
-             This opens the challenge and a Terminal.
-
-          2. Go to the challenge folder:
-
-             cd /challenge
-
-          3. Type:
-
-             ls
-
-             This lists the challenge files.
-
-          4. Use grep to search vault_clue.txt for information about the
-             password.
-
-             If you have not used grep before, look at the Grep Master
-             challenge for an example of how it works.
-
-          5. Once you have found the password, use unzip to open vault.zip.
-
-             You will need to extract the files into your home folder:
-
-             unzip vault.zip -d /home/hacker
-
-          6. When asked for the password, enter the password you found.
-
-             Nothing will appear while you type the password. This is
-             normal. Type the password and press Enter.
-
-          7. Go to your home folder:
-
-             cd /home/hacker
-
-          8. Type:
-
-             ls
-
-             Look for the file that was extracted from the vault.
-
-          9. Type:
-
-             cat filename.txt
-
-             to read the contents of the file. Replace filename.txt with
-             the actual name of the file you found.
-
-          10. Find the complete temporary FLAG{...}.
-
-          11. Run:
-
-              /challenge/verify
-
-              When the verifier asks for the flag, enter the complete
-              temporary flag, including FLAG{}.
-
-          12. If it is correct, the verifier will give you your final
-              pwn.college{...} flag.
-
-          13. Submit that final flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── The Artist's Clue ────────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: the-artists-clue
         name: "The Artist's Clue"
-        description: |
-          *Find a flag hidden in the metadata of an image file.*
-
-          You are investigating a mysterious painting called art.jpg.
-
-          The flag is not hidden in the visible picture. It is hidden in
-          information stored alongside the image.
-
-          This extra information is called metadata. Metadata is data
-          about data. An image can contain information such as when it
-          was taken, what camera was used, or even hidden notes from the
-          creator.
-
-          You can use a command called exiftool to look at an image's
-          metadata.
-
-          To start:
-
-          1. Press Start.
-
-             This opens the challenge and a Terminal.
-
-          2. Go to the folder containing the image:
-
-             cd /home/ubuntu/Artists-Clue
-
-          3. Type:
-
-             ls
-
-             You should see art.jpg.
-
-          4. Use exiftool to inspect the image's metadata:
-
-             exiftool art.jpg
-
-          5. Look carefully through all the information it displays.
-             There will be a lot of lines. Read through every one of
-             them.
-
-             You are looking for a temporary flag beginning with:
-
-             FLAG{
-
-          6. When you find the complete temporary flag, run:
-
-             /challenge/verify
-
-             When the verifier asks for the flag, enter the complete
-             temporary flag, including FLAG{}.
-
-          7. If it is correct, the verifier will give you your final
-             pwn.college{...} flag.
-
-          8. Submit that final flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Pale Red Horse Squad ─────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: pale-red-horse-squad
         name: "Pale Red Horse Squad"
-        description: |
-          *Find a hidden passphrase on a webpage using Developer Tools.*
-
-          There is a secret club with a hidden entry passphrase.
-
-          The passphrase has been left somewhere on the club's webpage.
-          Your job is to find it.
-
-          This challenge introduces you to webpages, localhost and
-          investigating how a webpage works.
-
-          To start:
-
-          1. Press Start.
-
-             This opens the challenge and a Terminal.
-
-          2. Go to the challenge folder:
-
-             cd /challenge
-
-          3. Start the challenge:
-
-             ./verify
-
-             This starts the local website.
-
-             Leave the Terminal running while you use the website.
-
-          ### Open the website
-
-          4. At the bottom of the Terminal, find the Desktop button next
-             to the Code button.
-
-             Click Desktop.
-
-             The pwn.college virtual Desktop will open in a new browser
-             tab.
-
-          5. Find and open Firefox inside the virtual Desktop.
-
-          6. In Firefox, click the address bar at the top and enter:
-
-             http://127.0.0.1:5000
-
-             Then press Enter.
-
-          Important:
-
-          Use Firefox inside the pwn.college Desktop. Do not enter the
-          address into your normal browser. 127.0.0.1 means this
-          computer. The website is running on the pwn.college virtual
-          computer, which is why you need to use Firefox inside the
-          Desktop.
-
-          ### Find the passphrase
-
-          Look around the webpage and try to find the hidden passphrase.
-
-          If you cannot find it by looking at the visible page, try
-          investigating how the webpage is built. Firefox has Developer
-          Tools which can help you investigate information behind a
-          webpage. You do not need previous web development experience
-          to solve this challenge.
-
-          Once you find the passphrase, enter it into the webpage.
-
-          The website will give you a pwn.college{...} flag.
-
-          ### Submit your flag
-
-          Copy the complete pwn.college{...} flag and submit it on the
-          competition challenge page.
-
-          If you need to move text between the virtual Desktop and your
-          normal browser, use the Clipboard panel in the side tab of the
-          pwn.college Desktop.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
   # ──────────────────────────────────────────────────────────────
   #  EASY
   # ──────────────────────────────────────────────────────────────
@@ -419,202 +135,24 @@ modules:
           module: forensics
           challenge: chatty-server
         name: "Chatty Server"
-        description: |
-          *Investigate a busy server log to find a flag hidden in
-          pieces.*
-
-          You are investigating a server log called `server.log`. It
-          records everything users did on a server: logging in,
-          uploading files, changing passwords and more.
-
-          Someone has hidden a temporary flag in the log, split into
-          three pieces across different entries. Only one of the real
-          pieces contains `FLAG{`, so searching for FLAG alone will not
-          find them all.
-
-          The log also contains fake flags to throw you off. Check that
-          the pieces you find really belong together.
-
-          1. Press Start to open the challenge and a Terminal.
-
-          2. Go to the challenge folder:
-
-             cd /home/ubuntu/Chatty-Server
-
-          3. Get a feel for the log before you search it. It is very
-             long, so instead of printing all of it, try:
-
-             head server.log
-
-             This shows the first 10 lines. Work out what each part of
-             a line tells you.
-
-          4. Use `grep` to search the log. Start with what you know,
-             then use what you find to narrow your search. Think about
-             who hid the flag and what they were doing.
-
-          5. Put the three pieces together in the right order to make
-             the complete temporary flag. The timestamps will help.
-
-          6. Run:
-
-             /challenge/verify
-
-             and enter the complete temporary flag.
-
-          7. Submit the final pwn.college{...} flag on the challenge
-             page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Social Media Password ────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: osint
           challenge: socialmediapassword
         name: "Social Media Password"
-        description: |
-          *Use clues from social media posts to guess a password.*
-
-          You are investigating a fake social media profile belonging to
-          `@random_dude12`.
-
-          The profile contains three posts with personal information.
-          Use clues from the posts to work out a likely password.
-
-          People often use personal details in their passwords. Think
-          about what kind of information someone might combine to make
-          a password they can remember.
-
-          1. Press Start, then start the website by running:
-
-             /challenge/run
-
-             Leave this Terminal running while you complete the
-             challenge.
-
-          2. Open the Desktop and launch Firefox.
-
-          3. Go to:
-
-             http://127.0.0.1:5000
-
-          4. Read the three posts and look for personal information that
-             could be used to create a password.
-
-          5. When you think you have the password, open a second Terminal
-             in the Desktop.
-
-          6. In the second Terminal, run:
-
-             /challenge/verify
-
-          7. Enter your password guess when prompted.
-
-          8. If it is correct, the verifier will give you your final
-             `pwn.college{...}` flag.
-
-          9. Submit the final flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Locked Treasure Chest ────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: locked-treasure-chest
         name: "Locked Treasure Chest"
-        description: |
-          *Find a flag hidden in the properties of a ZIP file.*
-
-          You have found a digital treasure chest containing another
-          ZIP file.
-
-          The flag is hidden in information about the ZIP file itself,
-          not inside a normal file within it.
-
-          1. Press Start to open the challenge and a Terminal.
-
-          2. Go to the challenge folder:
-
-             cd /challenge
-
-          3. Extract `digital_treasure.zip` into your home folder.
-
-             If you need a reminder of the `unzip` syntax, use its
-             `--help` option.
-
-          4. Find the new file called `treasure.zip`.
-
-             Do NOT unzip `treasure.zip`. The flag is not inside it.
-
-          5. Use `zipinfo` to look at the information stored about
-             `treasure.zip`.
-
-             If you need a reminder of how to use `zipinfo`, try its
-             `--help` option.
-
-          6. Look through the information for the temporary flag
-             beginning with `FLAG{...}`.
-
-          7. Once you have found the complete temporary flag, run:
-
-             /challenge/verify
-
-          8. Enter the complete temporary flag, including `FLAG{...}`.
-
-          9. The verifier will give you your final `pwn.college{...}`
-             flag.
-
-          10. Submit the final flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Am I Admin? (moved from Medium) ──────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: am-i-admin
         name: "Am I Admin?"
-        description: |
-          *Tamper with a browser cookie to gain admin access.*
-
-          Websites often remember information about you using small
-          pieces of data stored in your browser called cookies.
-
-          This website uses a cookie to decide whether you are a normal
-          user or an administrator. Your job is to find that cookie and
-          change it so the website thinks you are an admin.
-
-          1. Press Start, then start the web application:
-
-             /challenge/app.py
-
-             Leave this Terminal running while you use the website.
-
-          2. Open the Desktop, launch Firefox, and go to:
-
-             http://127.0.0.1:5000
-
-          3. Look at the cookies the website has set in your browser.
-
-             In Firefox, press F12 to open Developer Tools, then go to
-             the Storage tab. You will see the cookies under Cookies.
-
-          4. Look at the cookie names and values. Think about what you
-             could change to make the website treat you as an admin.
-
-          5. After changing a cookie, refresh the page to see if it
-             worked.
-
-          6. If the website treats you as an administrator, the admin
-             page will show you the pwn.college{...} flag.
-
-          7. Submit the flag on the challenge page. Use the Clipboard
-             panel if you need to copy it out of the Desktop.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
   # ──────────────────────────────────────────────────────────────
   #  MEDIUM
   # ──────────────────────────────────────────────────────────────
@@ -640,229 +178,30 @@ modules:
           module: forensics
           challenge: secret-message-in-photo
         name: "Secret Message in Photo"
-        description: |
-          *Extract a secret message hidden inside an image using
-          steganography.*
-
-          You have found a suspicious image containing a hidden message.
-
-          Steganography is the practice of hiding information inside
-          another file, such as an image, so that it is invisible to
-          anyone who does not know it is there.
-
-          A tool called `steghide` can extract data hidden this way,
-          but the data is protected by a passphrase. You will need to
-          work out what the passphrase is.
-
-          To start:
-
-          1. Press Start to open the challenge and a Terminal.
-
-          2. Go to the challenge folder and list the files:
-
-             cd /challenge
-             ls
-
-          3. Investigate the files and use `steghide` to extract the
-             hidden data from the image. If you are not sure how to use
-             it, try:
-
-             steghide --help
-
-          4. Investigate whatever you extract. The temporary flag will
-             look like:
-
-             FLAG{...}
-
-          5. Once you have found the temporary flag, run:
-
-             /challenge/verify
-
-             and enter the complete temporary flag.
-
-          6. Submit the final pwn.college{...} flag on the challenge
-             page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Magic Number ─────────────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: pwn
           challenge: magic-number
         name: "Magic Number"
-        description: |
-          *Inspect a program to discover its secret numbers, then make
-          the computer do the guessing for you.*
-
-          A compiled program is hiding a secret number. Each time it
-          runs, it picks one number from a small set of possible values
-          and asks you to guess it.
-
-          Compiled programs are not meant to be human-readable, but they
-          still contain readable text mixed in with the machine code.
-          The `strings` command pulls that readable text out of a file.
-
-          To start:
-
-          1. Press Start to open the challenge and a Terminal.
-
-          2. Look at the readable text inside the program:
-
-             strings /challenge/magic_numbers
-
-             Find the possible numbers.
-
-          3. Run the program and see how it behaves:
-
-             /challenge/magic_numbers
-
-          4. Guessing by hand works, but it is slow. Can you write a
-             short command or script that keeps trying until it wins?
-
-          5. When you guess correctly, the program gives you a special
-             output string. Give that string to:
-
-             /challenge/verify
-
-          6. Submit the pwn.college{...} flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Hidden Treasures in the Picture ──────────────────────
-      # CHECK PATH: confirm the image folder below before the event.
       - import:
           dojo: cyber-security~59368da7
           module: forensics
           challenge: hidden-treasures-in-the-picture
         name: "Hidden Treasures in the Picture"
-        description: |
-          *Find four flag pieces hidden in an image using multiple
-          forensics techniques.*
-
-          A mysterious image contains four separate pieces of a flag.
-          The pieces have been hidden using different techniques, so
-          no single tool will find them all.
-
-          To start:
-
-          1. Press Start to open the challenge and a Terminal.
-
-          2. Go to the challenge folder and list the files:
-
-             cd /challenge
-             ls
-
-          3. Investigate the image. Tools that may be useful include:
-
-             strings, grep, exiftool, steghide, binwalk
-
-             Some tools show you information about a file. Others can
-             pull hidden data out of it. If a tool extracts something,
-             investigate what it extracted too.
-
-             If you are not sure how a tool works, try its --help
-             option.
-
-          4. Keep a note of each piece as you find it. When you have
-             all four, put them together in the right order to make
-             the complete temporary FLAG{...}.
-
-          5. Run:
-
-             /challenge/verify
-
-             and enter the complete temporary flag.
-
-          6. Submit the final pwn.college{...} flag on the challenge
-             page.
-
-          Stuck? Use SENSAI through the Help link at the top of the
-          page. Tell it which tools you have tried and which pieces
-          you have found so far.
-
       # ── Am I Admin 2? ────────────────────────────────────────
       - import:
           dojo: cyber-security~59368da7
           module: web
           challenge: am-i-admin-2
         name: "Am I Admin 2?"
-        description: |
-          *Read a web application's source code to understand how it
-          checks cookies, then forge the right value.*
-
-          This is a harder version of Am I Admin? from the Easy module.
-
-          The website still uses a browser cookie to decide whether you
-          are an administrator, but simply editing the cookie like
-          before will not work. The application now checks the cookie
-          in a smarter way.
-
-          This time you have access to the Python source code that runs
-          the website. Your job is to understand how the cookie is
-          created and checked, then create a cookie the website will
-          accept as an admin.
-
-          To start:
-
-          1. Press Start, then start the application:
-
-             /challenge/app.py
-
-             Leave this Terminal running.
-
-          2. Open Firefox inside the Desktop and go to:
-
-             http://127.0.0.1:5000
-
-          3. Look at the cookie the website sets (F12, then Storage).
-
-          4. Read the Python code in /challenge. Pay attention to which
-             libraries are imported and how the cookie value is built
-             and checked.
-
-          5. Create a cookie value that makes the website treat you as
-             an admin, set it in your browser and refresh the page.
-
-          6. If you succeed, the website will show you the
-             pwn.college{...} flag. Submit it on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Reverse Plaintext Password (moved from Hard) ─────────
       - import:
           dojo: cyber-security~59368da7
           module: pwn
           challenge: reverse-password-plaintext
         name: "Reverse Plaintext Password"
-        description: |
-          *Read and trace Python code to reconstruct a generated
-          password.*
-
-          A Python program generates a password by selecting characters
-          from several lists in a specific order. You have the full
-          source code.
-
-          Goal: work out exactly which characters are selected and in
-          what order, then enter the password.
-
-          Press Start, open the VS Code Workspace and inspect:
-
-          /challenge/plaintextPassword.py
-
-          Follow every function involved in building the password.
-          Watch how lists are indexed and in which order functions are
-          called.
-
-          When you have the password, run:
-
-          /challenge/verify
-
-          Enter it to receive your pwn.college{...} flag, then submit
-          the flag on the challenge page.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
   # ──────────────────────────────────────────────────────────────
   #  HARD
   # ──────────────────────────────────────────────────────────────
@@ -890,121 +229,27 @@ modules:
           module: reverse-engineering
           challenge: terrible-token-hard
         name: "Terrible Token"
-        description: |
-          Reverse engineer this challenge to find the correct license
-          key.
-
-          The program is at /challenge/terrible-token-hard. Run it,
-          type a key and press Enter. The correct key prints your
-          pwn.college{...} flag.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Tangled Ticket ───────────────────────────────────────
       - import:
           dojo: cse466-f2025
           module: reverse-engineering
           challenge: tangled-ticket-hard
         name: "Tangled Ticket"
-        description: |
-          Reverse engineer this challenge to find the correct license
-          key, but your input will be modified somehow before being
-          compared to the correct key.
-
-          The program is at /challenge/tangled-ticket-hard. Run it,
-          type a key and press Enter. The correct key prints your
-          pwn.college{...} flag.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Tricky Control Hijack ────────────────────────────────
-      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
-      # dojo, which lists it as "Control Hijack 2". If the import
-      # fails, try control-hijack-2-hard. Check the program path with
-      # ls -l /challenge and update the description to match.
       - import:
           dojo: intro-to-cybersecurity
           module: binary-exploitation
           challenge: control-hijack-2
         name: "Tricky Control Hijack"
-        description: |
-          *Overflow a buffer to take control of where the program goes
-          next.*
-
-          This program has a buffer overflow. Somewhere inside it is
-          code that prints the flag, but the program never runs it on
-          its own.
-
-          Goal: overflow the buffer to hijack the program's control
-          flow and make it run the code that prints the flag.
-
-          Press Start, then find the program with:
-
-          ls -l /challenge
-
-          You do not get the source code. You will need to reverse
-          engineer the program to work out how much to overflow and
-          where to send it.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── PIEs ─────────────────────────────────────────────────
-      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
-      # dojo ("Pie Overflow"). If the import fails, try
-      # pie-overflow-hard. Check the program path before the event.
       - import:
           dojo: intro-to-cybersecurity
           module: binary-exploitation
           challenge: pie-overflow
         name: "PIEs"
-        description: |
-          *Hijack control flow in a program whose addresses change every
-          time it runs.*
-
-          Overflow a buffer and smash the stack to obtain the flag, but
-          this time the program is a Position Independent Executable
-          (PIE). It is loaded at a different address every time it
-          runs, so you cannot simply jump to a fixed address.
-
-          Goal: find a way to reach the code that prints the flag even
-          though you do not know exactly where it will be.
-
-          Press Start, then find the program with:
-
-          ls -l /challenge
-
-          You do not get the source code. Think about which parts of an
-          address change between runs and which parts stay the same.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
-
       # ── Hijack to Shellcode ──────────────────────────────────
-      # UNVERIFIED: challenge ID inferred from the cse365-2025-summer
-      # dojo ("Hijack To Shellcode"). If the import fails, try
-      # hijack-to-shellcode-hard. Check the program path before the
-      # event.
       - import:
           dojo: intro-to-cybersecurity
           module: binary-exploitation
           challenge: hijack-to-shellcode
         name: "Hijack to Shellcode"
-        description: |
-          *The final challenge: inject your own code and make the
-          program run it.*
-
-          This time there is no helpful code inside the program that
-          prints the flag. You will have to write it yourself.
-
-          Goal: write shellcode (machine code) that reads the flag,
-          inject it into the program, and use a buffer overflow to make
-          the program run it.
-
-          Press Start, then find the program with:
-
-          ls -l /challenge
-
-          You do not get the source code. This combines everything:
-          reverse engineering, overflows, controlling execution and
-          writing shellcode.
-
-          Stuck? Use SENSAI through the Help link at the top of the page.
